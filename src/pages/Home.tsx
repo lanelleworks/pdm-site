@@ -9,6 +9,7 @@ import {
   Cable,
 } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
+import HeroProductShowcase from "@/components/HeroProductShowcase";
 import { fadeUp } from "@/lib/motion";
 
 const STATS = [
@@ -159,24 +160,8 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Product visual — real Busch unit on a workshop-gray plate */}
-          <motion.figure
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="rounded-2xl border border-line bg-ground p-8 md:p-10">
-              <img
-                src="/img/products/Cobra-Industry.png"
-                alt="Busch COBRA dry screw vacuum pump — supplied by Putra Deka Mandiri"
-                className="mx-auto max-h-[300px] w-auto object-contain md:max-h-[340px]"
-              />
-            </div>
-            <figcaption className="mt-3 flex items-center justify-between text-xs text-neutral-500">
-              <span className="font-semibold text-neutral-700">BUSCH COBRA — dry screw vacuum pump</span>
-              <span>Genuine unit · full warranty</span>
-            </figcaption>
-          </motion.figure>
+          {/* Product visual — auto-rotating showcase of real distributed units */}
+          <HeroProductShowcase />
         </div>
       </section>
 
