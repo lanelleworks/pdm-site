@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
   "img": "/img/products/Busch-Combi-Vacuum-Pumps.png",
   "paras": [
    "The almost endless possible combinations of vacuum pumps allow working pressure and suction capacity to be adapted individually to the process conditions.",
-   "Busch Combi variants are available with pumping speed  430 - 4270 m³/h (50 Hz)  and &lt; 3/10³hPa (mbar) vacuum pressure.",
+   "Busch Combi variants are available with pumping speed  430 - 4270 m³/h (50 Hz)  and < 3/10³hPa (mbar) vacuum pressure.",
    "Busch Combi Vacuum Pumps use the combination from the quality of Busch R5 or Busch Cobra with Busch Panda. These combinations give you the flexibility  for best performance in aplications such as:"
   ],
   "specs": null
@@ -270,7 +270,7 @@ export const PRODUCTS: Product[] = [
  },
  {
   "slug": "dino-hd-e1-vhd-e2-v",
-  "title": "DINO HD-E1-V&#038;HD-E2-V",
+  "title": "DINO HD-E1-V & HD-E2-V",
   "brand": "Dino",
   "group": "drum pumps",
   "img": "/img/products/DINO-HD-E1-V-HD-E2-V-21.jpeg",
@@ -462,10 +462,10 @@ export const PRODUCTS: Product[] = [
     "- Power supply : AC 220 V ± 10% 50/60 Hz (standard) or AC110 V ± 10% 50/60 Hz (optional)"
    ],
    [
-    "- Power consumption: &lt; 50 W"
+    "- Power consumption: < 50 W"
    ],
    [
-    "- Operating condition: Temperature 0 to 40 °C ; Relative humidity &lt; 80%"
+    "- Operating condition: Temperature 0 to 40 °C ; Relative humidity < 80%"
    ],
    [
     "- Dimensions (L × W × H): 202 × 160 × 239 (mm)"
@@ -1854,7 +1854,7 @@ export const PRODUCTS: Product[] = [
  },
  {
   "slug": "lsp01-1c-push-pull-syringe-pump",
-  "title": "LSP01-1C Push &#038; Pull Syringe Pump",
+  "title": "LSP01-1C Push & Pull Syringe Pump",
   "brand": "Longer",
   "group": "syringe pumps",
   "img": "/img/products/LSP01-1C-Push-Pull-Syringe-Pump.jpg",
@@ -2341,7 +2341,7 @@ export const PRODUCTS: Product[] = [
   "group": "tubing",
   "img": "/img/products/Peristaltic-Pump-Tubing-Tygon%C2%AE-F-4040-A.jpg",
   "paras": [
-   "A consistent performer lot after lot, Tygon® Fuel and Lubricant Tubing is the most requested fuel and lubricant tubing for a variety of applications &#8212; from small engine fuel lines to coolant transfer. Specifically designed to handle most fuels and industrial lubricants, Tygon® Fuel and Lubricant Tubing resists the swelling and hardening caused by hydrocarbon-based fluids. This significantly reduces the risk of failure due to cracking and leakage. Its minimum extractability safeguards the liquid or vapor being transferred against adulteration.",
+   "A consistent performer lot after lot, Tygon® Fuel and Lubricant Tubing is the most requested fuel and lubricant tubing for a variety of applications — from small engine fuel lines to coolant transfer. Specifically designed to handle most fuels and industrial lubricants, Tygon® Fuel and Lubricant Tubing resists the swelling and hardening caused by hydrocarbon-based fluids. This significantly reduces the risk of failure due to cracking and leakage. Its minimum extractability safeguards the liquid or vapor being transferred against adulteration.",
    "Extremely flexible (Shore A, 57), Tygon® Fuel and Lubricant Tubing simplifies installation, even in tight places. It is translucent yellow for positive identification and to allow easy flow monitoring. It is routinely used to handle gasoline, kerosene, heating oils, cutting compounds and glycol-based coolants."
   ],
   "specs": [
