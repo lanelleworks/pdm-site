@@ -31,7 +31,7 @@ const CATEGORIES = [
     imgAlt: "Verderair VA-25 air-operated diaphragm pump",
     title: "Process Pumps",
     desc: "Diaphragm, peristaltic, and specialty process pumps for demanding fluids.",
-    brands: ["Verderair", "Nikkiso", "Dino", "Longer", "Trundean"],
+    brands: ["Verderair", "Shuneiko", "Dino", "Longer", "Trundean"],
   },
   {
     img: "/img/products/Tonson-Angle-bung-air-mixer1.png",
@@ -84,7 +84,7 @@ const WHY = [
 const BRANDS = [
   "BUSCH",
   "VERDERAIR",
-  "NIKKISO",
+  "SHUNEIKO",
   "TRUNDEAN",
   "TONSON",
   "VACUTRONIC",

@@ -2386,10 +2386,10 @@ export const PRODUCTS: Product[] = [
  },
  {
   "slug": "adony-series-ah",
-  "title": "Nikkiso ADONY Series AH",
-  "brand": "Nikkiso",
-  "group": "canned-motor pumps",
-  "img": "/img/products/ADONY-Series-AH-450x350-1.jpg",
+  "title": "Shuneiko ADONY Series AH",
+  "brand": "Shuneiko",
+  "group": "diaphragm metering pumps",
+  "img": "/img/products/Shuneiko-ADONY-Series-AH.jpg",
   "paras": [
    "The series NFH is a solenoid driven metering with the concept of the user-friendly design . Our technology makes the pump with reliable feeding performance . The feeding capacity can be adjusted via stroke length and stroke frequency to obtain a satisfied turndown ratio.",
    "● High discharge accuracy\n\n● PVC, SUS304, SUS316 diaphragm heads available\n\n※PVDF material can only be produced in AHA01-42\n\n● Various connection types available: Flange, union, hose (AHA01 to 32: PVC)\n\n● The durable and simple oil-bath drive unit\n\n● Motors: S.F.:1.15 F class IP55 outdoor service (AHA & AHB standard type only)",
@@ -2399,10 +2399,10 @@ export const PRODUCTS: Product[] = [
  },
  {
   "slug": "chemipon-b-series-bx",
-  "title": "Nikkiso CHEMIPON B Series BX",
-  "brand": "Nikkiso",
-  "group": "canned-motor pumps",
-  "img": "/img/products/CHEMIPON-B-Series-BX450x350.jpg",
+  "title": "Shuneiko CHEMIPON B Series BX",
+  "brand": "Shuneiko",
+  "group": "diaphragm metering pumps",
+  "img": "/img/products/Shuneiko-CHEMIPON-B-Series-BX.jpg",
   "paras": [
    "The CHEMIPON B Diaphragm metering pump BX series is a light-weight direct-acting pump series. This model saves space and with a mid-range discharge rate (up to 2L/min) at a 40W-90W low output range achieves a high level of cost performance.",
    "● Compact, easy to install\n\n● Various materials for liquid end selection of the suitable materials or the applied liquids a possible\n\n● Repeatability of precise pumping ±2%\n\n● Single phase or three phases IP55 terminal box specification\n\n● Choose either hose or flange for connecting joints (PVC)",
@@ -2412,10 +2412,10 @@ export const PRODUCTS: Product[] = [
  },
  {
   "slug": "chemipon-n-series-nfh",
-  "title": "Nikkiso CHEMIPON N Series NFH",
-  "brand": "Nikkiso",
-  "group": "canned-motor pumps",
-  "img": "/img/products/N-series-NFH-450x350-1.jpg",
+  "title": "Shuneiko CHEMIPON N Series NFH",
+  "brand": "Shuneiko",
+  "group": "diaphragm metering pumps",
+  "img": "/img/products/Shuneiko-N-Series-NFH.jpg",
   "paras": [
    "The series NFH is a solenoid driven metering with the concept of the user-friendly design. Our technology makes the pump with reliable feeding performance. The feeding capacity can be adjusted via stroke length and stroke frequency to obtain a satisfied turndown ratio.",
    "● The wide voltage circuit design. (1φ100V~240V)\n\n● The solenoid with thermostat always makes the pump running safety.\n\n● The water/dust proof design which Equivalent to protection IP65\n\n● Easy to read the LCD display",

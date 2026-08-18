@@ -43,9 +43,9 @@ const BRAND_ORDER: { brand: string; id: string; badge?: string; intro: string; g
     intro: "Drum and container pumps for safe fluid transfer.",
   },
   {
-    brand: "Nikkiso",
-    id: "nikkiso",
-    intro: "Japanese seal-less canned-motor pumps for hazardous and high-purity liquids.",
+    brand: "Shuneiko",
+    id: "shuneiko",
+    intro: "Taiwanese-manufactured diaphragm metering pumps for precise chemical dosing in water treatment, food, chemical, and hydroponic applications.",
   },
   {
     brand: "Longer",
