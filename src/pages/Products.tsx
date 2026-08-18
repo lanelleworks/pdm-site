@@ -4,6 +4,7 @@ import { ArrowRight, BadgeCheck, Cable } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { fadeUp } from "@/lib/motion";
+import { asset } from "@/lib/utils";
 
 /* Complete catalogue — every card links to its product page. */
 
@@ -179,7 +180,7 @@ export default function Products() {
                   className="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card"
                 >
                   <div className="flex h-36 items-center justify-center border-b border-line bg-white p-4">
-                    <img src={t.img} alt={`Tonson ${t.name}`} loading="lazy" className="max-h-full w-auto object-contain" />
+                    <img src={asset(t.img)} alt={`Tonson ${t.name}`} loading="lazy" className="max-h-full w-auto object-contain" />
                   </div>
                   <div className="p-4">
                     <h3 className="font-display text-sm font-bold text-neutral-900">{t.name}</h3>

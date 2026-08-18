@@ -11,6 +11,7 @@ import {
 import ContactSection from "@/components/ContactSection";
 import HeroProductShowcase from "@/components/HeroProductShowcase";
 import { fadeUp } from "@/lib/motion";
+import { asset } from "@/lib/utils";
 
 const STATS = [
   { n: "2007", label: "Serving industry since" },
@@ -224,7 +225,7 @@ export default function Home() {
                 <div className="flex h-44 items-center justify-center border-b border-line bg-white p-5">
                   {c.img ? (
                     <img
-                      src={c.img}
+                      src={asset(c.img)}
                       alt={c.imgAlt}
                       className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
                     />
@@ -292,7 +293,7 @@ export default function Home() {
                 className="group relative h-44 overflow-hidden rounded-2xl md:h-52"
               >
                 <img
-                  src={a.img}
+                  src={asset(a.img)}
                   alt={a.label}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -345,7 +346,7 @@ export default function Home() {
             >
               <div className="flex h-56 items-center justify-center lg:h-64">
                 <img
-                  src="/img/products/Busch-Combi-Vacuum-Pumps.png"
+                  src={asset("/img/products/Busch-Combi-Vacuum-Pumps.png")}
                   alt="Busch COMBI vacuum system — commissioned on-site by PDM"
                   className="max-h-full w-auto object-contain"
                 />
@@ -391,7 +392,7 @@ export default function Home() {
             className="mx-auto mt-10 max-w-5xl rounded-2xl border border-line bg-white p-6 shadow-card md:p-10"
           >
             <img
-              src="/brand/happy-customer.png"
+              src={asset("/brand/happy-customer.png")}
               alt="Customers of Putra Deka Mandiri: Nestlé, Charoen Pokphand, Darya-Varia Laboratoria, Kalbe, and Tempo Scan"
               className="w-full"
             />

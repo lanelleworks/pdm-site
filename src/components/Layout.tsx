@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet, Link, useLocation } from "react-router-dom";
 import { ArrowRight, Menu, X, Phone, Mail } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -55,7 +55,7 @@ export default function Layout() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 md:gap-6 md:px-6">
           <Link to="/" className="flex min-w-0 items-center" aria-label="Putra Deka Mandiri — home">
             <img
-              src="/brand/pdm-logo.png"
+              src={asset("/brand/pdm-logo.png")}
               alt="CV. Putra Deka Mandiri — Pumps, Vacuum Pumps, Blowers and Industrial Parts"
               className="h-8 w-auto md:h-10"
             />
@@ -139,7 +139,7 @@ export default function Layout() {
         <div className="mx-auto max-w-6xl px-4 py-10 md:px-6">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="rounded-lg bg-white px-4 py-2.5">
-              <img src="/brand/pdm-logo.png" alt="CV. Putra Deka Mandiri" className="h-7 w-auto" />
+              <img src={asset("/brand/pdm-logo.png")} alt="CV. Putra Deka Mandiri" className="h-7 w-auto" />
             </div>
             <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
               {NAV.map((n) => (

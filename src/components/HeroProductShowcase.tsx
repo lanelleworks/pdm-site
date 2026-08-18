@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { asset } from "@/lib/utils";
 
 /* Rotating product showcase for the hero.
    Craft notes:
@@ -79,7 +80,7 @@ export default function HeroProductShowcase() {
     for (let s = 1; s <= 2; s++) {
       const next = SLIDES[(index + s) % SLIDES.length];
       const preload = new Image();
-      preload.src = next.img;
+      preload.src = asset(next.img);
     }
   }, [index]);
 
@@ -100,7 +101,7 @@ export default function HeroProductShowcase() {
           <AnimatePresence mode="sync" initial={false} custom={direction}>
             <motion.img
               key={slide.img}
-              src={slide.img}
+              src={asset(slide.img)}
               alt={`${slide.name} — ${slide.type}`}
               custom={direction}
               initial={{ opacity: 0, x: direction * 12 }}

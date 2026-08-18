@@ -133,7 +133,7 @@ export const PRODUCTS: Product[] = [
   "title": "Busch R5 Vacuum Pumps",
   "brand": "Busch",
   "group": "oil lubricated rotary vane",
-  "img": "/img/products/r5_rd_0360_a_technology_767x510.png",
+  "img": "/img/products/Busch-R5.png",
   "paras": [
    "Ulimate pressure: 0.1 - 20 hPa (mbar)\n\nNominal pumping speed: 4 - 1800 m3/h\n\nThe robustness and operational reliability of oil-lubricated R 5 rotary vane vacuum pumps have long made them the industry standard. Every day over 2.5 million R 5 vacuum pumps worldwide provide dependable service under the harshest industrial conditions.",
    "Safe and cost-effective\n\nRotary vane technology has been continuously developed and optimised by Busch over the decades, with the emphasis on operational reliability and efficiency. R 5 rotary vane vacuum pumps are known throughout the industry for their modern and energy-efficient vacuum generation, in a wide range of applications. Whether for intermittent or continuous use, you can rely on the R 5.",

@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { fadeUp } from "@/lib/motion";
+import { asset } from "@/lib/utils";
 
 // The 12 application sectors from the original site, with its real photography.
 const SECTORS = [
@@ -50,7 +51,7 @@ export default function Applications() {
             >
               <div className="relative h-44 overflow-hidden">
                 <img
-                  src={s.img}
+                  src={asset(s.img)}
                   alt={s.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

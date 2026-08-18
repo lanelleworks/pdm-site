@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import { CUSTOMERS } from "@/data/customers";
 import { fadeUp } from "@/lib/motion";
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 
 const PRINCIPALS = [
   { group: "Vacuum Pumps", names: ["Busch", "Trundean", "Vacutronic"] },
@@ -56,7 +56,7 @@ export default function Reference() {
         {/* Featured logos */}
         <motion.div {...fadeUp} className="rounded-2xl border border-line bg-white p-6 shadow-card md:p-10">
           <img
-            src="/brand/happy-customer.png"
+            src={asset("/brand/happy-customer.png")}
             alt="Featured customers: Nestlé, Charoen Pokphand, Darya-Varia Laboratoria, Kalbe, and Tempo Scan"
             className="w-full"
           />

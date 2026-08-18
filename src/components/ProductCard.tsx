@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Package } from "lucide-react";
 import type { Product } from "@/data/products";
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 
 export default function ProductCard({
   product,
@@ -27,7 +27,7 @@ export default function ProductCard({
       >
         {product.img ? (
           <img
-            src={product.img}
+            src={asset(product.img)}
             alt={product.title}
             loading="lazy"
             className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-[1.05]"

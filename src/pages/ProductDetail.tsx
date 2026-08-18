@@ -5,6 +5,7 @@ import { ArrowRight, ChevronRight, Mail, Phone, Package } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { fadeUp } from "@/lib/motion";
+import { asset } from "@/lib/utils";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -60,7 +61,7 @@ export default function ProductDetail() {
             <div className="flex h-72 items-center justify-center md:h-80">
               {product.img ? (
                 <img
-                  src={product.img}
+                  src={asset(product.img)}
                   alt={product.title}
                   className="max-h-full w-auto object-contain"
                 />
