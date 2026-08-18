@@ -351,18 +351,36 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <motion.figure {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              <div className="overflow-hidden rounded-2xl border border-line shadow-card-lg">
+            {/* Service panel — product-as-hero, hairline dividers, no shadow */}
+            <motion.aside
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.2 }}
+              aria-label="Service commitment"
+              className="rounded-2xl border border-line bg-ground p-8"
+            >
+              <div className="flex h-56 items-center justify-center lg:h-64">
                 <img
-                  src="/img/company/professional_services.jpg"
-                  alt="PDM technical team providing professional service"
-                  className="h-72 w-full object-cover lg:h-[420px]"
+                  src="/img/products/Busch-Combi-Vacuum-Pumps.png"
+                  alt="Busch COMBI vacuum system — commissioned on-site by PDM"
+                  className="max-h-full w-auto object-contain"
                 />
               </div>
-              <figcaption className="mt-3 text-xs text-neutral-500">
-                Commissioning &amp; service handled by our own technicians.
-              </figcaption>
-            </motion.figure>
+              <p className="mt-4 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                COMBI system — commissioned on-site by PDM
+              </p>
+              <div className="mt-6 divide-y divide-line border-t border-line">
+                {[
+                  "On-site commissioning & repair",
+                  "Genuine spare parts, in stock",
+                  "Response within one business day",
+                ].map((line) => (
+                  <div key={line} className="flex items-center gap-3 py-3.5">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-yellow ring-4 ring-brand-yellow/20" />
+                    <span className="text-sm font-medium text-neutral-700">{line}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.aside>
           </div>
         </div>
       </section>
