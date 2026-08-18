@@ -9,10 +9,21 @@
       content="CV. Putra Deka Mandiri — authorized distributor of BUSCH vacuum pumps, process pumps, air motors, and industrial hoses in Indonesia since 2007."
     />
     <meta name="theme-color" content="#0B0F14" />
+    <!-- Preview URL: keep search engines out until the real launch. Remove before switching to the custom domain. -->
+    <meta name="robots" content="noindex, nofollow" />
     <title>Putra Deka Mandiri — Pumps, Blowers & Vacuum Pumps Distributor Indonesia</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Companion to 404.html — decode the ?/ redirect back into a normal URL so react-router can handle it.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) { return s.replace(/~and~/g, '&'); }).join('?');
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
