@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
+import ProductDetail from "@/pages/ProductDetail";
 import Applications from "@/pages/Applications";
 import Reference from "@/pages/Reference";
 import Articles from "@/pages/Articles";
@@ -13,6 +14,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="/applications" element={<Applications />} />
         <Route path="/reference" element={<Reference />} />
         <Route path="/articles" element={<Articles />} />
