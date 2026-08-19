@@ -6,7 +6,6 @@ import {
   Clock,
   Package,
   ArrowRight,
-  Cable,
 } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
 import HeroProductShowcase from "@/components/HeroProductShowcase";
@@ -20,34 +19,45 @@ const STATS = [
   { n: "9", label: "World-class principals" },
 ];
 
-const CATEGORIES = [
+// Each brand in a category gets its own product-image tile in the card.
+const CATEGORIES: {
+  title: string;
+  desc: string;
+  brands: { name: string; img: string; alt: string }[];
+}[] = [
   {
-    img: "/img/products/Mink.png",
-    imgAlt: "Busch Mink claw vacuum pump",
     title: "Vacuum Pumps",
     desc: "Dry, oil-lubricated, and liquid-ring vacuum pumps for every industrial process.",
-    brands: ["Busch", "Trundean"],
+    brands: [
+      { name: "Busch", img: "/img/products/Cobra-Industry.png", alt: "Busch COBRA dry screw vacuum pump" },
+      { name: "Trundean", img: "/img/products/Trundean-TH-Type-Roots-Blower.jpg", alt: "Trundean TH roots blower" },
+    ],
   },
   {
-    img: "/img/products/Verderflex-Hose-Pump.jpg",
-    imgAlt: "Verderflex peristaltic hose pump",
     title: "Process Pumps",
     desc: "Diaphragm, peristaltic, and specialty process pumps for demanding fluids.",
-    brands: ["Verderflex", "Nikkiso", "Dino", "Longer", "Trundean"],
+    brands: [
+      { name: "Verderflex", img: "/img/products/Verderflex-Hose-Pump.jpg", alt: "Verderflex peristaltic hose pump" },
+      { name: "Nikkiso", img: "/img/products/Nikkiso-CHEMIPON-B-Series-BX.jpg", alt: "Nikkiso CHEMIPON B diaphragm metering pump" },
+      { name: "Dino", img: "/img/products/Machinery-HD-A1.png", alt: "Dino HD-A1 drum pump" },
+      { name: "Longer", img: "/img/products/lipp001.jpg", alt: "Longer intelligent peristaltic pump" },
+      { name: "Trundean", img: "/img/products/TMD37.png", alt: "Trundean TMD magnetic drive process pump" },
+    ],
   },
   {
-    img: "/img/products/Tonson-Angle-bung-air-mixer1.png",
-    imgAlt: "Tonson air motor mixer",
     title: "Air Motors",
     desc: "Reliable pneumatic motors for explosion-proof and washdown environments.",
-    brands: ["Tonson"],
+    brands: [
+      { name: "Tonson", img: "/img/products/Tonson-Angle-bung-air-mixer1.png", alt: "Tonson pneumatic air motor mixer" },
+    ],
   },
   {
-    img: null,
-    imgAlt: "",
     title: "Tubings & Hoses",
     desc: "Industrial-grade tubing and hose systems for fluid and air transfer.",
-    brands: ["New Age Industries", "Saint-Gobain"],
+    brands: [
+      { name: "New Age Industries", img: "/img/products/NewAge-Tubing.jpg", alt: "New Age Industries industrial tubing" },
+      { name: "Saint-Gobain", img: "/img/products/Peristaltic-Pump-Tubing-Tygon%C2%AER-3603.jpg", alt: "Saint-Gobain Tygon R-3603 tubing" },
+    ],
   },
 ];
 
@@ -225,30 +235,42 @@ export default function Home() {
                 transition={{ ...fadeUp.transition, delay: i * 0.07 }}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-card-lg"
               >
-                <div className="flex h-44 items-center justify-center border-b border-line bg-white p-5">
-                  {c.img ? (
-                    <img
-                      src={asset(c.img)}
-                      alt={c.imgAlt}
-                      className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
-                    />
-                  ) : (
-                    <Cable size={56} strokeWidth={1.2} className="text-neutral-300" />
-                  )}
+                {/* Brand image grid — one product photo per brand in this category */}
+                <div className="grid grid-cols-2 gap-px border-b border-line bg-line">
+                  {c.brands.map((b) => (
+                    <div
+                      key={b.name}
+                      className={
+                        "flex flex-col items-center justify-between bg-white p-3 " +
+                        (c.brands.length === 1 ? "col-span-2" : "")
+                      }
+                    >
+                      <div
+                        className={
+                          "flex w-full items-center justify-center " +
+                          (c.brands.length === 1
+                            ? "h-32"
+                            : c.brands.length >= 4
+                              ? "h-16"
+                              : "h-20")
+                        }
+                      >
+                        <img
+                          src={asset(b.img)}
+                          alt={b.alt}
+                          loading="lazy"
+                          className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-[1.05]"
+                        />
+                      </div>
+                      <div className="mt-2 text-center text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+                        {b.name}
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="font-display text-lg font-bold text-neutral-900">{c.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{c.desc}</p>
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {c.brands.map((b) => (
-                      <span
-                        key={b}
-                        className="rounded-full bg-ground px-2.5 py-1 text-[10px] font-semibold tracking-wide text-neutral-600"
-                      >
-                        {b}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </motion.article>
             ))}
