@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { NavLink, Outlet, Link, useLocation } from "react-router-dom";
-import { ArrowRight, Menu, X, Phone, Mail } from "lucide-react";
+import { ArrowRight, Phone, Mail } from "lucide-react";
 import { asset, cn } from "@/lib/utils";
 
 const NAV = [
@@ -25,10 +25,6 @@ function ScrollToTop() {
 }
 
 export default function Layout() {
-  const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
-  useEffect(() => setOpen(false), [pathname]);
-
   return (
     <div className="min-h-screen bg-paper text-neutral-900">
       <ScrollToTop />
@@ -61,6 +57,7 @@ export default function Layout() {
             />
           </Link>
 
+          {/* Desktop: nav lives inline in the header */}
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
             {NAV.map((n) => (
               <NavLink
@@ -81,53 +78,39 @@ export default function Layout() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Link
-              to="/contact"
-              className="hidden shrink-0 items-center gap-1.5 rounded-lg bg-brand-yellow px-3 py-2 text-xs font-bold text-black shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-lg sm:inline-flex md:gap-2 md:px-4 md:text-sm"
-            >
-              Request a Quote
-              <ArrowRight size={15} strokeWidth={2.5} />
-            </Link>
-            <button
-              type="button"
-              onClick={() => setOpen(!open)}
-              aria-expanded={open}
-              aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-neutral-800 hover:bg-neutral-100 lg:hidden"
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
+          <Link
+            to="/contact"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-brand-yellow px-3 py-2 text-xs font-bold text-black shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-lg md:gap-2 md:px-4 md:text-sm"
+          >
+            <span className="sm:hidden">Quote</span>
+            <span className="hidden sm:inline">Request a Quote</span>
+            <ArrowRight size={15} strokeWidth={2.5} />
+          </Link>
         </div>
 
-        {/* Mobile menu */}
-        {open && (
-          <nav aria-label="Mobile" className="border-t border-line bg-white px-4 pb-4 pt-2 lg:hidden">
-            {NAV.map((n) => (
-              <NavLink
-                key={n.to}
-                to={n.to}
-                end={n.to === "/"}
-                className={({ isActive }) =>
-                  cn(
-                    "block rounded-lg px-3 py-2.5 text-sm font-medium",
-                    isActive ? "bg-brand-yellow/20 text-black" : "text-neutral-700 hover:bg-neutral-100",
-                  )
-                }
-              >
-                {n.label}
-              </NavLink>
-            ))}
-            <Link
-              to="/contact"
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-yellow px-4 py-2.5 text-sm font-bold text-black"
+        {/* Mobile: nav on its own row under the header, matches desktop styling */}
+        <nav
+          aria-label="Main"
+          className="scrollbar-none flex items-center gap-5 overflow-x-auto border-t border-line px-4 py-2.5 lg:hidden"
+        >
+          {NAV.map((n) => (
+            <NavLink
+              key={n.to}
+              to={n.to}
+              end={n.to === "/"}
+              className={({ isActive }) =>
+                cn(
+                  "relative shrink-0 py-1 text-sm font-medium transition-colors",
+                  isActive
+                    ? "font-semibold text-neutral-900 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-brand-yellow"
+                    : "text-neutral-500 hover:text-neutral-900",
+                )
+              }
             >
-              Request a Quote
-              <ArrowRight size={15} strokeWidth={2.5} />
-            </Link>
-          </nav>
-        )}
+              {n.label}
+            </NavLink>
+          ))}
+        </nav>
       </header>
 
       <main>

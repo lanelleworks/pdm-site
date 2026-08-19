@@ -41,6 +41,10 @@ body {
   }
 }
 
+/* Hide scrollbar on the horizontal mobile nav — keeps the row clean while overflow-x still works. */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
