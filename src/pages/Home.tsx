@@ -21,43 +21,44 @@ const STATS = [
 ];
 
 // Each brand in a category gets its own product-image tile in the card.
+// `to` is the /products anchor its section lives at.
 const CATEGORIES: {
   title: string;
   desc: string;
-  brands: { name: string; img: string; alt: string }[];
+  brands: { name: string; img: string; alt: string; to: string }[];
 }[] = [
   {
     title: "Vacuum Pumps",
     desc: "Dry, oil-lubricated, and liquid-ring vacuum pumps for every industrial process.",
     brands: [
-      { name: "Busch", img: "/img/products/Cobra-Industry.png", alt: "Busch COBRA dry screw vacuum pump" },
-      { name: "Trundean", img: "/img/products/Trundean-TH-Type-Roots-Blower.jpg", alt: "Trundean TH roots blower" },
+      { name: "Busch", img: "/img/products/Cobra-Industry.png", alt: "Busch COBRA dry screw vacuum pump", to: "/products#busch" },
+      { name: "Trundean", img: "/img/products/Trundean-TH-Type-Roots-Blower.jpg", alt: "Trundean TH roots blower", to: "/products#trundean" },
     ],
   },
   {
     title: "Process Pumps",
     desc: "Diaphragm, peristaltic, and specialty process pumps for demanding fluids.",
     brands: [
-      { name: "Verderflex", img: "/img/products/Verderflex-Hose-Pump.jpg", alt: "Verderflex peristaltic hose pump" },
-      { name: "Nikkiso", img: "/img/products/Nikkiso-CHEMIPON-B-Series-BX.jpg", alt: "Nikkiso CHEMIPON B diaphragm metering pump" },
-      { name: "Dino", img: "/img/products/Machinery-HD-A1.png", alt: "Dino HD-A1 drum pump" },
-      { name: "Longer", img: "/img/products/lipp001.jpg", alt: "Longer intelligent peristaltic pump" },
-      { name: "Trundean", img: "/img/products/TMD37.png", alt: "Trundean TMD magnetic drive process pump" },
+      { name: "Verderflex", img: "/img/products/Verderflex-Hose-Pump.jpg", alt: "Verderflex peristaltic hose pump", to: "/products#verderflex" },
+      { name: "Nikkiso", img: "/img/products/Nikkiso-CHEMIPON-B-Series-BX.jpg", alt: "Nikkiso CHEMIPON B diaphragm metering pump", to: "/products#nikkiso" },
+      { name: "Dino", img: "/img/products/Machinery-HD-A1.png", alt: "Dino HD-A1 drum pump", to: "/products#dino" },
+      { name: "Longer", img: "/img/products/lipp001.jpg", alt: "Longer intelligent peristaltic pump", to: "/products#longer" },
+      { name: "Trundean", img: "/img/products/TMD37.png", alt: "Trundean TMD magnetic drive process pump", to: "/products#trundean" },
     ],
   },
   {
     title: "Air Motors",
     desc: "Reliable pneumatic motors for explosion-proof and washdown environments.",
     brands: [
-      { name: "Tonson", img: "/img/products/Tonson-Angle-bung-air-mixer1.png", alt: "Tonson pneumatic air motor mixer" },
+      { name: "Tonson", img: "/img/products/Tonson-Angle-bung-air-mixer1.png", alt: "Tonson pneumatic air motor mixer", to: "/products#tonson" },
     ],
   },
   {
     title: "Tubings & Hoses",
     desc: "Industrial-grade tubing and hose systems for fluid and air transfer.",
     brands: [
-      { name: "New Age Industries", img: "/img/products/NewAge-Tubing.jpg", alt: "New Age Industries industrial tubing" },
-      { name: "Saint-Gobain", img: "/img/products/Peristaltic-Pump-Tubing-Tygon%C2%AER-3603.jpg", alt: "Saint-Gobain Tygon R-3603 tubing" },
+      { name: "New Age Industries", img: "/img/products/NewAge-Tubing.jpg", alt: "New Age Industries industrial tubing", to: "/products#tubings" },
+      { name: "Saint-Gobain", img: "/img/products/Peristaltic-Pump-Tubing-Tygon%C2%AER-3603.jpg", alt: "Saint-Gobain Tygon R-3603 tubing", to: "/products#tubings" },
     ],
   },
 ];
