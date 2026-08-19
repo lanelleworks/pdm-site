@@ -273,7 +273,7 @@ export const PRODUCTS: Product[] =  [
   "title": "DINO HD-E1-V & HD-E2-V",
   "brand": "Dino",
   "group": "drum pumps",
-  "img": "/img/products/DINO-HD-E1-V-HD-E2-V-21.jpeg",
+  "img": "/img/products/Machinery-HD-E-V.png",
   "paras": [],
   "specs": null
  },
