@@ -111,7 +111,7 @@ export default function Home() {
             >
               <BadgeCheck size={15} className="shrink-0 text-busch" />
               <span className="text-[11px] font-bold tracking-wide text-busch md:text-xs">
-                Distributor Resmi — BUSCH Vacuum Solutions Indonesia
+                Authorized Distributor — pumps, blowers &amp; vacuum technology
               </span>
             </motion.div>
 
@@ -146,17 +146,17 @@ export default function Home() {
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <Link
-                to="/contact"
+                to="/products"
                 className="inline-flex items-center gap-2 rounded-xl bg-brand-yellow px-6 py-3 text-sm font-bold text-black shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-lg"
               >
-                Request a Quote
+                Explore Products
                 <ArrowRight size={16} strokeWidth={2.5} />
               </Link>
               <Link
-                to="/products"
+                to="/contact"
                 className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:border-neutral-500"
               >
-                Explore Products
+                Request a Quote
               </Link>
             </motion.div>
           </div>
