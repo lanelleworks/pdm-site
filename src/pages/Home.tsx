@@ -83,17 +83,19 @@ const WHY = [
   },
 ];
 
-const BRANDS = [
-  "BUSCH",
-  "VERDERAIR",
-  "SHUNEIKO",
-  "TRUNDEAN",
-  "TONSON",
-  "VACUTRONIC",
-  "DINO",
-  "LONGER",
-  "NEW AGE",
-  "SAINT-GOBAIN",
+// Each brand links to its section on the /products page.
+// New Age + Saint-Gobain live in the shared "Tubings & Hoses" section (#tubings).
+const BRANDS: { label: string; to: string }[] = [
+  { label: "BUSCH", to: "/products#busch" },
+  { label: "VERDERAIR", to: "/products#verderair" },
+  { label: "SHUNEIKO", to: "/products#shuneiko" },
+  { label: "TRUNDEAN", to: "/products#trundean" },
+  { label: "TONSON", to: "/products#tonson" },
+  { label: "VACUTRONIC", to: "/products#vacutronic" },
+  { label: "DINO", to: "/products#dino" },
+  { label: "LONGER", to: "/products#longer" },
+  { label: "NEW AGE", to: "/products#tubings" },
+  { label: "SAINT-GOBAIN", to: "/products#tubings" },
 ];
 
 export default function Home() {
@@ -185,12 +187,14 @@ export default function Home() {
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
                 {BRANDS.map((b) => (
-                  <span
-                    key={b}
-                    className="mx-7 font-display text-sm font-bold tracking-[0.18em] text-neutral-300 md:mx-9"
+                  <Link
+                    key={b.label + copy}
+                    to={b.to}
+                    tabIndex={copy === 1 ? -1 : 0}
+                    className="mx-7 font-display text-sm font-bold tracking-[0.18em] text-neutral-300 transition-colors hover:text-neutral-900 focus-visible:text-neutral-900 focus-visible:outline-none md:mx-9"
                   >
-                    {b}
-                  </span>
+                    {b.label}
+                  </Link>
                 ))}
               </div>
             ))}
