@@ -11,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import HeroProductShowcase from "@/components/HeroProductShowcase";
 import { fadeUp } from "@/lib/motion";
 import { asset } from "@/lib/utils";
+import CategoryCard from "@/components/CategoryCard";
 
 const STATS = [
   { n: "2007", label: "Serving industry since" },
@@ -229,50 +230,13 @@ export default function Home() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {CATEGORIES.map((c, i) => (
-              <motion.article
+              <motion.div
                 key={c.title}
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: i * 0.07 }}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-card-lg"
               >
-                {/* Brand image grid — one product photo per brand in this category */}
-                <div className="grid grid-cols-2 gap-px border-b border-line bg-line">
-                  {c.brands.map((b) => (
-                    <div
-                      key={b.name}
-                      className={
-                        "flex flex-col items-center justify-between bg-white p-3 " +
-                        (c.brands.length === 1 ? "col-span-2" : "")
-                      }
-                    >
-                      <div
-                        className={
-                          "flex w-full items-center justify-center " +
-                          (c.brands.length === 1
-                            ? "h-32"
-                            : c.brands.length >= 4
-                              ? "h-16"
-                              : "h-20")
-                        }
-                      >
-                        <img
-                          src={asset(b.img)}
-                          alt={b.alt}
-                          loading="lazy"
-                          className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-[1.05]"
-                        />
-                      </div>
-                      <div className="mt-2 text-center text-[10px] font-bold uppercase tracking-wider text-neutral-500">
-                        {b.name}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-lg font-bold text-neutral-900">{c.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{c.desc}</p>
-                </div>
-              </motion.article>
+                <CategoryCard title={c.title} desc={c.desc} brands={c.brands} />
+              </motion.div>
             ))}
           </div>
 
