@@ -8,48 +8,44 @@ import { asset } from "@/lib/utils";
 
 /* Complete catalogue — every card links to its product page. */
 
-const BRAND_ORDER: { brand: string; id: string; badge?: string; intro: string; groupOrder?: string[] }[] = [
+// `label` is uppercase for display; `brand` matches the products.ts data field.
+const BRAND_ORDER: { brand: string; label: string; id: string; badge?: string; intro: string; groupOrder?: string[] }[] = [
   {
     brand: "Busch",
+    label: "BUSCH",
     id: "busch",
     badge: "Authorized distributor",
     intro:
       "The world's largest manufacturer of vacuum pumps, blowers, and compressors — all 18 Busch families available through PDM with genuine parts and local service.",
   },
   {
+    brand: "Nikkiso",
+    label: "NIKKISO",
+    id: "nikkiso",
+    intro: "Japanese-engineered diaphragm metering pumps for precise chemical dosing in water treatment, food, chemical, and hydroponic applications.",
+  },
+  {
     brand: "Trundean",
+    label: "TRUNDEAN",
     id: "trundean",
     intro: "Taiwanese roots blowers and process pumps with excellent value for general industrial duty.",
     groupOrder: ["roots blowers", "process pumps"],
   },
   {
-    brand: "Vacutronic",
-    id: "vacutronic",
-    intro: "Oil-less piston vacuum pumps and compressors for clean, low-maintenance duty.",
-  },
-  {
-    brand: "Verderair",
-    id: "verderair",
-    intro: "Air-operated double-diaphragm pumps in metallic, non-metallic, high-pressure, and PTFE-pure builds.",
-    groupOrder: ["VA series", "high-pressure", "PURE PTFE series", "drum pumps", "split manifolds"],
-  },
-  {
     brand: "Verderflex",
+    label: "VERDERFLEX",
     id: "verderflex",
     intro: "Peristaltic hose and tube pumps for abrasive or shear-sensitive media.",
   },
   {
     brand: "Dino",
+    label: "DINO",
     id: "dino",
     intro: "Drum and container pumps for safe fluid transfer.",
   },
   {
-    brand: "Shuneiko",
-    id: "shuneiko",
-    intro: "Taiwanese-manufactured diaphragm metering pumps for precise chemical dosing in water treatment, food, chemical, and hydroponic applications.",
-  },
-  {
     brand: "Longer",
+    label: "LONGER",
     id: "longer",
     intro:
       "Precision peristaltic, syringe, and gear pumps for laboratory, pharma filling, and OEM integration — the complete Longer range.",
@@ -79,12 +75,12 @@ export default function Products() {
               The full range.
             </h1>
             <p className="mt-4 leading-relaxed text-neutral-600">
-              {PRODUCTS.length} products from ten world-class principals — click
+              {PRODUCTS.length} products from nine world-class principals — click
               any product for details, specifications, and a quote.
             </p>
           </motion.div>
           <motion.nav {...fadeUp} aria-label="Jump to brand" className="mt-8 flex flex-wrap gap-2">
-            {[...BRAND_ORDER.map((b) => ({ id: b.id, label: b.brand })),
+            {[...BRAND_ORDER.map((b) => ({ id: b.id, label: b.label })),
               { id: "tonson", label: "Tonson" },
               { id: "tubings", label: "Tubings & Hoses" }].map((j) => (
               <a
@@ -109,10 +105,10 @@ export default function Products() {
                   .filter((x) => x.items.length)
               : [{ g: "", items }];
             return (
-              <section key={meta.id} id={meta.id} aria-label={meta.brand} className="scroll-mt-24">
+              <section key={meta.id} id={meta.id} aria-label={meta.label} className="scroll-mt-24">
                 <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
                   <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">
-                    {meta.brand}
+                    {meta.label}
                   </h2>
                   {meta.badge && (
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-busch/50 bg-busch/[0.07] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-busch">
@@ -161,7 +157,7 @@ export default function Products() {
           {/* Tonson — catalogue listing (no per-product pages on source site) */}
           <section id="tonson" aria-label="Tonson" className="scroll-mt-24">
             <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
-              <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">Tonson</h2>
+              <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">TONSON</h2>
               <span className="rounded-full bg-ground px-2.5 py-1 text-[11px] font-bold text-neutral-500">
                 Air Motors
               </span>
@@ -195,7 +191,7 @@ export default function Products() {
           <section id="tubings" aria-label="Industrial tubings and hoses" className="scroll-mt-24">
             <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
               <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">
-                Industrial Tubings &amp; Hoses
+                INDUSTRIAL TUBINGS &amp; HOSES
               </h2>
             </motion.div>
             <motion.p {...fadeUp} className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
@@ -203,8 +199,8 @@ export default function Products() {
             </motion.p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
-                { name: "New Age Industries", desc: "Plastic & rubber tubing, reinforced hose, and fittings — FDA, USP, and 3-A sanitary options." },
-                { name: "Saint-Gobain", desc: "Tygon®, Norprene®, and PharMed® high-performance tubing for food, beverage, and biopharma." },
+                { name: "NEW AGE INDUSTRIES", desc: "Plastic & rubber tubing, reinforced hose, and fittings — FDA, USP, and 3-A sanitary options." },
+                { name: "SAINT-GOBAIN", desc: "Tygon®, Norprene®, and PharMed® high-performance tubing for food, beverage, and biopharma." },
               ].map((t) => (
                 <motion.div key={t.name} {...fadeUp} className="rounded-2xl border border-line bg-white p-6 shadow-card">
                   <Cable size={22} strokeWidth={1.6} className="text-neutral-400" />

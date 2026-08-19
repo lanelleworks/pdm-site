@@ -17,7 +17,7 @@ const STATS = [
   { n: "2007", label: "Serving industry since" },
   { n: "94+", label: "Customer references" },
   { n: "12", label: "Industries served" },
-  { n: "10", label: "World-class principals" },
+  { n: "9", label: "World-class principals" },
 ];
 
 const CATEGORIES = [
@@ -26,14 +26,14 @@ const CATEGORIES = [
     imgAlt: "Busch Mink claw vacuum pump",
     title: "Vacuum Pumps",
     desc: "Dry, oil-lubricated, and liquid-ring vacuum pumps for every industrial process.",
-    brands: ["Busch", "Trundean", "Vacutronic"],
+    brands: ["Busch", "Trundean"],
   },
   {
-    img: "/img/products/Verderair-VA-25-HP.jpg",
-    imgAlt: "Verderair VA-25 air-operated diaphragm pump",
+    img: "/img/products/Verderflex-Hose-Pump.jpg",
+    imgAlt: "Verderflex peristaltic hose pump",
     title: "Process Pumps",
     desc: "Diaphragm, peristaltic, and specialty process pumps for demanding fluids.",
-    brands: ["Verderair", "Shuneiko", "Dino", "Longer", "Trundean"],
+    brands: ["Verderflex", "Nikkiso", "Dino", "Longer", "Trundean"],
   },
   {
     img: "/img/products/Tonson-Angle-bung-air-mixer1.png",
@@ -87,13 +87,12 @@ const WHY = [
 // New Age + Saint-Gobain live in the shared "Tubings & Hoses" section (#tubings).
 const BRANDS: { label: string; to: string }[] = [
   { label: "BUSCH", to: "/products#busch" },
-  { label: "VERDERAIR", to: "/products#verderair" },
-  { label: "SHUNEIKO", to: "/products#shuneiko" },
+  { label: "NIKKISO", to: "/products#nikkiso" },
   { label: "TRUNDEAN", to: "/products#trundean" },
   { label: "TONSON", to: "/products#tonson" },
-  { label: "VACUTRONIC", to: "/products#vacutronic" },
   { label: "DINO", to: "/products#dino" },
   { label: "LONGER", to: "/products#longer" },
+  { label: "VERDERFLEX", to: "/products#verderflex" },
   { label: "NEW AGE", to: "/products#tubings" },
   { label: "SAINT-GOBAIN", to: "/products#tubings" },
 ];

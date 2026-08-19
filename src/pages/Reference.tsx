@@ -7,8 +7,8 @@ import { fadeUp } from "@/lib/motion";
 import { asset, cn } from "@/lib/utils";
 
 const PRINCIPALS = [
-  { group: "Vacuum Pumps", names: ["Busch", "Trundean", "Vacutronic"] },
-  { group: "Process Pumps", names: ["Verderair", "Shuneiko", "Dino", "Longer", "Trundean"] },
+  { group: "Vacuum Pumps", names: ["Busch", "Trundean"] },
+  { group: "Process Pumps", names: ["Verderflex", "Nikkiso", "Dino", "Longer", "Trundean"] },
   { group: "Air Motors", names: ["Tonson"] },
   { group: "Industrial Tubings & Hoses", names: ["New Age Industries", "Saint-Gobain"] },
 ];

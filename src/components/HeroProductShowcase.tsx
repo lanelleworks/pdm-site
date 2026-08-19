@@ -28,13 +28,9 @@ const SLIDES = [
   { img: "/img/products/Panda_Puma.png", name: "BUSCH Panda & Puma", type: "Vacuum boosters" },
   { img: "/img/products/Seco.png", name: "BUSCH Seco", type: "Dry-running rotary vane" },
   { img: "/img/products/Tyr.png", name: "BUSCH Tyr", type: "Rotary lobe blower" },
-  { img: "/img/products/Verderair-VA-25-HP.jpg", name: "VERDERAIR VA-25 HP", type: "High-pressure diaphragm pump" },
-  { img: "/img/products/Verderair-VA-15-drum-pumps.jpg", name: "VERDERAIR VA-15", type: "Drum pump" },
   { img: "/img/products/Verderflex-Hose-Pump.jpg", name: "VERDERFLEX", type: "Peristaltic hose pump" },
   { img: "/img/products/Trundean-TH-Type-Roots-Blower.jpg", name: "TRUNDEAN TH", type: "Roots blower" },
   { img: "/img/products/Trundean-THD-Type-Roots-Blower.jpg", name: "TRUNDEAN THD", type: "Roots blower" },
-  { img: "/img/products/JP-90_120_140V.png", name: "VACUTRONIC JP", type: "Oil-less piston" },
-  { img: "/img/products/DP-40C.png", name: "VACUTRONIC DP", type: "Oil-less piston compressor" },
   { img: "/img/products/Tonson-Angle-bung-air-mixer1.png", name: "TONSON", type: "Air motor mixer" },
 ];
 
