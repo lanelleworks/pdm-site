@@ -106,7 +106,7 @@ export default function Products() {
                   .filter((x) => x.items.length)
               : [{ g: "", items }];
             return (
-              <section key={meta.id} id={meta.id} aria-label={meta.label} className="scroll-mt-24">
+              <section key={meta.id} id={meta.id} aria-label={meta.label} className="scroll-mt-32">
                 <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
                   <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">
                     {meta.label}
@@ -156,7 +156,7 @@ export default function Products() {
           })}
 
           {/* Tonson — catalogue listing (no per-product pages on source site) */}
-          <section id="tonson" aria-label="Tonson" className="scroll-mt-24">
+          <section id="tonson" aria-label="Tonson" className="scroll-mt-32">
             <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
               <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">TONSON</h2>
               <span className="rounded-full bg-ground px-2.5 py-1 text-[11px] font-bold text-neutral-500">
@@ -189,7 +189,7 @@ export default function Products() {
           </section>
 
           {/* Tubings & hoses */}
-          <section id="tubings" aria-label="Industrial tubings and hoses" className="scroll-mt-24">
+          <section id="tubings" aria-label="Industrial tubings and hoses" className="scroll-mt-32">
             <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
               <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">
                 INDUSTRIAL TUBINGS &amp; HOSES
