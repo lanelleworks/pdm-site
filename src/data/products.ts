@@ -10,7 +10,7 @@ export type Product = {
   specs: string[][] | null;
 };
 
-export const PRODUCTS: Product[] =  [
+export const PRODUCTS: Product[] = [
  {
   "slug": "busch-mink-vacuum-pumps",
   "title": "Busch Mink Vacuum Pumps",
@@ -2627,207 +2627,1550 @@ export const PRODUCTS: Product[] =  [
   "specs": null
  },
  {
-  "slug": "verderflex-peristaltic-cased-tube-pumps",
-  "title": "Verderflex Peristaltic Cased Tube Pumps",
-  "brand": "Verderflex",
-  "group": "peristaltic",
-  "img": "/img/products/csm_vf_oem_m045_6d8f481d19.jpg",
+  "slug": "verderair-va-15-drum-pumps",
+  "title": "Verderair VA 15 drum pumps",
+  "brand": "Verderair",
+  "group": "drum pumps",
+  "img": "/img/products/Verderair-VA-15-drum-pumps.jpg",
   "paras": [
-   "The Verderflex Peristaltic Cased Tube Pump range are ideal for benchtop, laboratory and process environments. Tube pumps are perfect for lower flow rates, are fully programmable, with the option of multiple heads. These types of pump provide accurate dosing and repeatability and are capable of handling viscous and chemically aggressive liquids as well as shear sensitive products."
-  ],
-  "specs": null
- },
- {
-  "slug": "verderflex-peristaltic-industrial-hose-and-tube-pumps",
-  "title": "Verderflex Peristaltic Industrial Pumps",
-  "brand": "Verderflex",
-  "group": "peristaltic",
-  "img": "/img/products/csm_vf_oem_m045_6d8f481d19.jpg",
-  "paras": [
-   "Verderflex® Industrial peristaltic pumps are extremely robust pumps, ideal for heavy duty operations on intermittent or continuous duty cycles.  They are a simple to use, easy to control, versatile and reliable way to pump liquids."
-  ],
-  "specs": null
- },
- {
-  "slug": "verderflex-peristaltic-oem-pumps",
-  "title": "Verderflex Peristaltic OEM Pumps",
-  "brand": "Verderflex",
-  "group": "peristaltic",
-  "img": "/img/products/Verderflex-Hose-Pump.jpg",
-  "paras": [
-   "Panel mounted tube pumps for OEM applications",
-   "The Verderflex OEM range of tube pumps are designed for panel mounting or incorporation into 3rd party machines that need an accurate, low maintenance dosing solution that can be found in many applications such as:"
+   "Verderair air operated diaphragm pumps are excellent drum pumps.Conventional drum pumps such as rod pumps are good tank emptying systems. For the emptying of small barrels, containers, canisters and drums (approx. 200 l) of all kind of chemicals such as acids or lye a double diaphragm pump is a very good alternative to a conventional rod drum pump. Diaphragm pumps can pump corrosive, viscous and abrasive fluids with ease.",
+   "Because of the working principle of a double diaphragm pump, corrosive, viscous and abrasive fluids can be transferred with ease. These are air driven pumps therefore no overpressure protection systems are needed. The maximum discharge pressure will be equal to the supplied air pressure.",
+   "As other drum pump systems the Verderair drum pump is of sealless design ensuring leak free operation."
   ],
   "specs": [
    [
-    "",
-    "Max. rate ml/min",
-    "Easy tube change",
-    "Cartridge pump",
-    "Continuous tubing",
-    "Tube assembly",
-    "Multi-channel",
-    "Integrated controls"
+    "Maximum fluid flow",
+    "57 l/min"
    ],
    [
-    "M045",
-    "60",
-    "",
-    "",
-    "",
-    "✔",
-    "",
-    ""
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
    ],
    [
-    "M025",
-    "260",
-    "",
-    "",
-    "",
-    "✔",
-    "",
-    ""
+    "Maximum air pressure",
+    "7 bars"
    ],
    [
-    "VP2-B",
-    "330",
-    "",
-    "",
-    "",
-    "✔",
-    "",
-    ""
+    "Suction- and discharge connections",
+    "1/2\" BSPT or NPT(F) suction with suction tube included"
    ],
    [
-    "VP2-R",
-    "330",
-    "",
-    "",
-    "",
-    "✔",
-    "",
-    "✔"
+    "Air inlet connection",
+    "1/4\" BSP / NPT"
    ],
    [
-    "Steptronic Mini-Load",
-    "380",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    "✔"
+    "Maximum suction lift",
+    "dry 4,5 m WC \nwet 7,6 m WC"
    ],
    [
-    "Mini-Load",
-    "380",
-    "✔",
-    "",
-    "✔",
-    "",
-    "",
-    ""
+    "Maximum size pumpable solids",
+    "2,5 mm"
    ],
    [
-    "M500",
-    "730",
-    "",
-    "",
-    "",
-    "✔",
-    "",
-    ""
+    "Materials liquid parts",
+    "Acetal (3,5 kg) \nPolypropylene (2,9 kg) \nKynar (3,9 kg)"
    ],
    [
-    "EZ",
-    "1260",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    ""
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar"
    ],
    [
-    "Steptronic EZ Head",
-    "1260",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    "✔"
+    "Available materials valve balls",
+    "Buna-N, Santoprene, Stainless Steel, Hytrel, PTFE, Viton"
    ],
    [
-    "S10",
-    "1720",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    ""
+    "Available materials diaphragms",
+    "Santoprene, PTFE, PTFE overmold, Hytrel, Buna N, Viton"
    ],
    [
-    "M2000",
-    "1900",
-    "",
-    "✔",
-    "",
-    "",
-    "",
-    ""
+    "Material center section",
+    "Polypropylene"
    ],
    [
-    "M1500",
-    "1900",
-    "",
-    "",
-    "✔",
-    "",
-    "",
-    ""
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Acetal models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-20-drum-pumps",
+  "title": "Verderair VA 20 drum pumps",
+  "brand": "Verderair",
+  "group": "drum pumps",
+  "img": "/img/products/Verderair-VA-20-drum-pumps.jpg",
+  "paras": [
+   "Verderair air operated diaphragm pumps are excellent drum pumps.Conventional drum pumps such as rod pumps are good tank emptying systems. For the emptying of small barrels, containers, canisters and drums (approx. 200 l) of all kind of chemicals such as acids or lye a double diaphragm pump is a very good alternative to a conventional rod drum pump. Diaphragm pumps can pump corrosive, viscous and abrasive fluids with ease.",
+   "Because of the working principle of a double diaphragm pump, corrosive, viscous and abrasive fluids can be transferred with ease. These are air driven pumps therefore no overpressure protection systems are needed. The maximum discharge pressure will be equal to the supplied air pressure.",
+   "As other drum pump systems the Verderair drum pump is of sealless design ensuring leak free operation."
+  ],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "61 l/min"
    ],
    [
-    "S20",
-    "2200",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    ""
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
    ],
    [
-    "R3DC",
-    "3400",
-    "✔",
-    "",
-    "✔",
-    "",
-    "",
-    ""
+    "Maximum air pressure",
+    "7 bars"
    ],
    [
-    "S30",
-    "6900",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    ""
+    "Suction- and discharge connections",
+    "3/4\" BSPT or NPT(F) suction with suction tube included"
    ],
    [
-    "S40",
-    "17000",
-    "✔",
-    "",
-    "✔",
-    "",
-    "✔",
-    ""
+    "Air inlet connection",
+    "1/4\" BSP / NPT"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,5 m WC"
+   ],
+   [
+    "wet 7,6 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "2,5 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium (3,9 kg)"
+   ],
+   [
+    "Stainless Steel 316 (8,2 kg)"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Santoprene, Stainless Steel, Hytrel, PTFE, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, PTFE, PTFE overmold, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-25-hp",
+  "title": "Verderair VA 25 HP",
+  "brand": "Verderair",
+  "group": "high-pressure",
+  "img": "/img/products/Verderair-VA-25-HP.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "90 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "16 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,6 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1\" BSP or NPT (F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT (F)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,9 m WC \nwet 8,8 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "3,2 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel, Hastelloy C"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar, Aluminium, Buna-N, Viton, Geolast, Santoprene, Hytrel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Stainless Steel, Hytrel, Viton, Geolast, PTFE, Neoprene, Neoprene with core"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Neoprene overmold, Viton, Geolast, PTFE/EPDM overmold, PTFE/EPDM 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Polypropylene, Conductive Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-40-hp",
+  "title": "Verderair VA 40 HP",
+  "brand": "Verderair",
+  "group": "high-pressure",
+  "img": "/img/products/Verderair-VA-40-HP.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "180 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "16 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1 1/2\" BSP or NPT (F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT (F)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC \nwet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "4,8 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Available materials valve seats",
+    "Polypropylene, Stainless Steel, Kynar, Buna-N, Viton, Geolast, Santoprene, Hytrel, hardened Steel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Hytrel, Viton, Geolast, PTFE, hardened Steel"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, Geolast, PTFE/EPDM overmold, PTFE/Neoprene 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-50-hp",
+  "title": "Verderair VA 50 HP",
+  "brand": "Verderair",
+  "group": "high-pressure",
+  "img": "/img/products/Verderair-VA-50-HP.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "275 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "16 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "2\" BSP or NPT (F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT (F)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC \nwet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "6,3 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel, Cast Iron"
+   ],
+   [
+    "Available materials valve seats",
+    "Polypropylene, Stainless Steel, Kynar, Buna-N, Viton, Geolast, Santoprene, Hytrel, hardened Steel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Hytrel, Viton, Geolast, PTFE, hardened Steel"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, Geolast, PTFE/EPDM overmold, PTFE/Neoprene 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-80-hp",
+  "title": "Verderair VA 80 HP",
+  "brand": "Verderair",
+  "group": "high-pressure",
+  "img": "/img/products/Verderair-VA-80-HP.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "585 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "16 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "3” BSP/NPT und (only for aluminium pumps) DN80 DIN PN10/16 – 3”Ainsi 150 Combi flange"
+   ],
+   [
+    "Air inlet connection",
+    "3/4\" NPT (F)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 2,5 m WC \nwet 8,5 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "13 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Available materials valve seats",
+    "Aluminium, Geolast, Polypropylene, Santoprene, Stainless Steel, Acetal, Hytrel, Buna-N, Viton"
+   ],
+   [
+    "Available materials valve balls",
+    "Geolast, Neoprene, Neoprene weighted, Santoprene, Acetal, Hytrel, PTFE, Buna-N, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Neoprene, Neoprene overmold, Buna-N, Viton, Geolast, Hytrel, Santoprene, PTFE/Santoprene 2 pieces"
+   ],
+   [
+    "Material center section",
+    "Aluminium"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-pure-double-diaphragm-pumps-p08",
+  "title": "Verderair PURE Double Diaphragm Pumps P08",
+  "brand": "Verderair",
+  "group": "PURE PTFE series",
+  "img": "/img/products/Verderair-Pure-P08.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "19 l/min"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1/4\" NPT"
+   ],
+   [
+    "Air inlet connection",
+    "R1/8"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 1 m WC \nwet 9 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "2,2 mm"
+   ],
+   [
+    "Materials liquid parts and center section",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve seats",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve balls",
+    "EPDM, PTFE, Stainless Steel, Cylinder Valve"
+   ],
+   [
+    "Available materials diaphragms",
+    "PTFE overmold, EPDM overmold"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-pure-double-diaphragm-pumps-p10",
+  "title": "Verderair PURE Double Diaphragm Pumps P10",
+  "brand": "Verderair",
+  "group": "PURE PTFE series",
+  "img": "/img/products/Verderair-Pure-P10.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "27 l/min"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "3/8\" NPT"
+   ],
+   [
+    "Air inlet connection",
+    "R1/8"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 2 m WC\n\nwet 9 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "3 mm"
+   ],
+   [
+    "Materials liquid parts and center section",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve seats",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve balls",
+    "EPDM, PTFE, Stainless Steel, Cylinder Valve"
+   ],
+   [
+    "Available materials diaphragms",
+    "PTFE overmold, EPDM overmold"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-pure-double-diaphragm-pumps-p15",
+  "title": "Verderair PURE Double Diaphragm Pumps P15",
+  "brand": "Verderair",
+  "group": "PURE PTFE series",
+  "img": "/img/products/Verderair-Pure-P15.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "60 l/min"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "½” NPT, DN15 DIN PN10/16 flange – ½” Ainsi 150 flange"
+   ],
+   [
+    "Air inlet connection",
+    "R1/4"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3 m WC\n\nwet 9,5 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "4 mm"
+   ],
+   [
+    "Materials liquid parts and center section",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve seats",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve balls",
+    "EPDM, PTFE, Stainless Steel, Cylinder Valve"
+   ],
+   [
+    "Available materials diaphragms",
+    "PTFE overmold, EPDM overmold"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-pure-double-diaphragm-pumps-p25",
+  "title": "Verderair PURE Double Diaphragm Pumps P25",
+  "brand": "Verderair",
+  "group": "PURE PTFE series",
+  "img": "/img/products/Verderair-Pure-P25.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "150 l/min"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1” NPT, DN25 DIN PN10/16 flange – 1” Ainsi 150 flange"
+   ],
+   [
+    "Air inlet connection",
+    "R1/4"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4 m WC\n\nwet 9,5 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "6 mm"
+   ],
+   [
+    "Materials liquid parts and center section",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve seats",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve balls",
+    "EPDM, PTFE, Stainless Steel, Cylinder Valve"
+   ],
+   [
+    "Available materials diaphragms",
+    "PTFE overmold, EPDM overmold"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-pure-double-diaphragm-pumps-p40",
+  "title": "Verderair PURE Double Diaphragm Pumps P40",
+  "brand": "Verderair",
+  "group": "PURE PTFE series",
+  "img": "/img/products/Verderair-Pure-P40.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "370 l/min"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1 1/2” NPT, DN40 DIN PN10/16 flange – 1 1/2” Ainsi 150 flange"
+   ],
+   [
+    "Air inlet connection",
+    "R1/2\""
+   ],
+   [
+    "Maximum suction lift",
+    "dry 5 m WC\n\nwet 9,5 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "9 mm"
+   ],
+   [
+    "Materials liquid parts and center section",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve seats",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve balls",
+    "EPDM, PTFE, Stainless Steel, Cylinder Valve"
+   ],
+   [
+    "Available materials diaphragms",
+    "PTFE overmold, EPDM overmold"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-pure-double-diaphragm-pumps-p50",
+  "title": "Verderair PURE Double Diaphragm Pumps P50",
+  "brand": "Verderair",
+  "group": "PURE PTFE series",
+  "img": "/img/products/Verderair-Pure-P50.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "660 l/min"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "2” NPT, DN50 DIN PN10/16 flange – 2” Ainsi 150 flange"
+   ],
+   [
+    "Air inlet connection",
+    "R1/2\""
+   ],
+   [
+    "Maximum suction lift",
+    "dry 5 m WC\n\nwet 9,5 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "11 mm"
+   ],
+   [
+    "Materials liquid parts and center section",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve seats",
+    "Polyethylene, conductive Polyethylene, PTFE, conductive PTFE"
+   ],
+   [
+    "Available materials valve balls",
+    "EPDM, PTFE, Stainless Steel, Cylinder Valve"
+   ],
+   [
+    "Available materials diaphragms",
+    "PTFE overmold, EPDM overmold"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-15-split-manifolds",
+  "title": "Verderair VA 15 Split Manifolds",
+  "brand": "Verderair",
+  "group": "split manifolds",
+  "img": "/img/products/Verderair-VA-15-Split-Manifolds.jpg",
+  "paras": [
+   "A dual port diaphragm pump (split manifold) allows the diaphragms of the pump chambers to operate  separately. The separation of the chambers allows the pumping of two fluids simultaneously or the mixing of two fluids with the pumping action.",
+   "To view an example, please click here.",
+   "A dual port diaphragm pump transfers UV paint in the printing press and empties the residue UV varnish from the drip tray under the same machine.",
+   "The capacity of both diaphragm chambers is always the same so the press will never overflow and the cylinders absorb the paint completely."
+  ],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "2 x 28 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1/2\" BSPT or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/4\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,5 m WC \nwet 7,6 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "2,5 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene, Acetal, Kynar"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Santoprene, Stainless Steel, Hytrel, PTFE, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Santoprene, PTFE, PTFE overmold, Hytrel, Buna N, Viton"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Acetal models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-20-split-manifolds",
+  "title": "Verderair VA 20 Split Manifolds",
+  "brand": "Verderair",
+  "group": "split manifolds",
+  "img": "/img/products/Verderair-VA-20-Split-Manifolds.jpg",
+  "paras": [
+   "A dual port diaphragm pump (split manifold) allows the diaphragms of the pump chambers to operate  separately. The separation of the chambers allows the pumping of two fluids simultaneously or the mixing of two fluids with the pumping action.",
+   "To view an example, please click here.",
+   "A dual port diaphragm pump transfers UV paint in the printing press and empties the residue UV varnish from the drip tray under the same machine.",
+   "The capacity of both diaphragm chambers is always the same so the press will never overflow and the cylinders absorb the paint completely."
+  ],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "2 x 30 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "3/4\" BSPT or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/4\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,5 m WC\n\nwet 7,6 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "2,5 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium (3,9 kg)\n\nStainless Steel 316 (8,2 kg)"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Santoprene, Stainless Steel, Hytrel, PTFE, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, PTFE, PTFE overmold, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-10-non-metallic",
+  "title": "Verderair VA 10 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/VA_10_NM.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "26 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "3/4\" BSP or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/4\" NPT(F)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC"
+   ],
+   [
+    "wet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "1,6 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene (2,2 kg)"
+   ],
+   [
+    "Acetal (2,4 kg)"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, stainless steel"
+   ],
+   [
+    "Available materials valve balls",
+    "PTFE Hytrel, Stainless Steel, Buna-N, Santoprene"
+   ],
+   [
+    "Available materials diaphragms",
+    "Santoprene, PTFE, Hytrel, Buna N"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Acetal models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-15-non-metallic",
+  "title": "Verderair VA 15 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Va_15_NM.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "57 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1/2\" BSP or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/4\" NPT(F)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,5 m WC"
+   ],
+   [
+    "wet 7,6 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "2,5 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene (2,9 kg)"
+   ],
+   [
+    "Acetal (3,5 kg)"
+   ],
+   [
+    "Conductive polypropylene (2,9 kg)"
+   ],
+   [
+    "Kynar (3,9 kg)"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, stainless steel, Kynar"
+   ],
+   [
+    "Available materials valve balls",
+    "PTFE, Hytrel, Stainless Steel, Buna-N, Santoprene, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Santoprene, PTFE, PTFE overmold, Hytrel, Buna N, Viton"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Acetal and Non-Conductive PP models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-20-metallic",
+  "title": "Verderair VA 20 Metallic Pumps",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Va_20_M.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "61 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "3/4\" BSP or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/4\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,5 m WC"
+   ],
+   [
+    "wet 7,6 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "2,5 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium (3,9 kg)"
+   ],
+   [
+    "Stainless Steel 316 (8,2 kg)"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Santoprene, Stainless Steel, Hytrel, PTFE, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, PTFE, PTFE overmold, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-25-metallic-pump",
+  "title": "Verderair VA 25 Metallic Pump",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-25-Metallic_thumb.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "189 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,6 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,6 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1\" BSPT or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,9 m WC"
+   ],
+   [
+    "wet 8,8 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "3,2 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel, Hastelloy C"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar, Aluminium, Buna-N, Viton, Geolast, Santoprene, Hytrel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Stainless Steel, Hytrel, Viton, Geolast, PTFE, Neoprene, Neoprene with core"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Neoprene overmold, Viton, Geolast, PTFE/EPDM overmold, PTFE/EPDM 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Polypropylene, conductive Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-25-non-metallic",
+  "title": "Verderair VA 25 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-25-non-metallic.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "189 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,6 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,6 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "DN25 DIN PN10/16 – 1”Ainsi 150 Combi flange"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 4,9 m WC"
+   ],
+   [
+    "wet 8,8 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "3,2 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene, conductive Polypropylene, Kynar"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar, Aluminium, Buna-N, Viton, Geolast, Santoprene, Hytrel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Stainless Steel, Hytrel, Viton, Geolast, PTFE, Neoprene, Neoprene with core"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Neoprene overmold, Viton, Geolast, PTFE/EPDM overmold, PTFE/EPDM 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Polypropylene, Conductive Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Conductive PP models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-40-metallic-pump",
+  "title": "Verderair VA 40 Metallic Pump",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-40-metallic.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "397 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,4 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1 1/2\" BSPT or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC"
+   ],
+   [
+    "wet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "4,8 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Available materials valve seats",
+    "Polypropylene, Stainless Steel, Kynar, Buna-N, Viton, Geolast, Santoprene, Hytrel, hardened Steel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Hytrel, Viton, Geolast, PTFE, hardened Steel"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, Geolast, PTFE/EPDM overmold, PTFE/Neoprene 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-40-non-metallic",
+  "title": "Verderair VA 40 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-40-non-metallic_thumb.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "397 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,4 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "DN40 DIN PN10/16 – 1 1/2”Ainsi 150 Combi flange"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC"
+   ],
+   [
+    "wet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "4,8 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene, conductive Polypropylene, Kynar"
+   ],
+   [
+    "Available materials valve seats",
+    "Polypropylene, Stainless Steel, Kynar, Buna-N, Viton, Geolast, Santoprene, Hytrel, Hardened Steel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Hytrel, Viton, Geolast, PTFE, Hardened Steel"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, Geolast, PTFE/EPDM overmold, PTFE/Neoprene 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Conductive PP models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-50-metallic-pump",
+  "title": "Verderair VA 50 Metallic Pump",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-50-metallic_thumb.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "568 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,4 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "2\" BSPT or NPT(F)"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC"
+   ],
+   [
+    "wet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "6,3 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Aluminium, Stainless Steel, Cast Iron"
+   ],
+   [
+    "Available materials valve seats",
+    "Acetal, Polypropylene, Stainless Steel, Kynar, Buna-N, Viton, Geolast, Santoprene, Hytrel, Hardened Steel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Hytrel, Viton, Geolast, PTFE, hardened Steel"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, Geolast, PTFE/EPDM overmold, PTFE/Neoprene 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Yes"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-50-non-metallic",
+  "title": "Verderair VA 50 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-50-non-metallic.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "568 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,4 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,4 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "DN50 DIN PN10/16 – 2”Ainsi 150 Combi flange"
+   ],
+   [
+    "Air inlet connection",
+    "1/2\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 3,7 m WC"
+   ],
+   [
+    "wet 6,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "6,3 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene, conductive Polypropylene, Kynar"
+   ],
+   [
+    "Available materials valve seats",
+    "Polypropylene, Stainless Steel, Kynar, Buna-N, Viton, Geolast, Santoprene, Hytrel, hardened Steel"
+   ],
+   [
+    "Available materials valve balls",
+    "Buna-N, Acetal, Santoprene, Hytrel, Viton, Geolast, PTFE, hardened Steel"
+   ],
+   [
+    "Available materials diaphragms",
+    "Buna-N, Viton, Geolast, PTFE/EPDM overmold, PTFE/Neoprene 2 pieces, Hytrel, Santoprene"
+   ],
+   [
+    "Material center section",
+    "Aluminium, Stainless Steel"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Cond. PP models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-8-non-metallic",
+  "title": "Verderair VA 8 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/VA_08.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "19 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "7 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "7 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "1/4\" BSP / NPT"
+   ],
+   [
+    "Air inlet connection",
+    "1/4\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 2,5 m WC"
+   ],
+   [
+    "wet 4,4 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "1,5 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene (0,9 kg)"
+   ],
+   [
+    "Acetal (1,1 kg)"
+   ],
+   [
+    "Kynar (1,3 kg)"
+   ],
+   [
+    "Available materials valves",
+    "Acetal, Polypropylene, Kynar"
+   ],
+   [
+    "Available materials diaphragms",
+    "Santoprene, PTFE"
+   ],
+   [
+    "Material center section",
+    "Polypropylene"
+   ],
+   [
+    "Atex ( Ex II2 GD c IIC T4)",
+    "Only Acetal models"
+   ]
+  ]
+ },
+ {
+  "slug": "verderair-va-80-non-metallic",
+  "title": "Verderair VA 80 non-metallic",
+  "brand": "Verderair",
+  "group": "VA series",
+  "img": "/img/products/Verderair-VA-80-metallic_thumb.jpg",
+  "paras": [],
+  "specs": [
+   [
+    "Maximum fluid flow",
+    "1140 l/min"
+   ],
+   [
+    "Maximum Fluid Discharge Pressure",
+    "8,6 bars"
+   ],
+   [
+    "Maximum air pressure",
+    "8,6 bars"
+   ],
+   [
+    "Suction- and discharge connections",
+    "DN80 DIN PN10/16 – 3”Ainsi 150 Combi flange"
+   ],
+   [
+    "Air inlet connection",
+    "3/4\" NPT(f)"
+   ],
+   [
+    "Maximum suction lift",
+    "dry 2,4 m WC"
+   ],
+   [
+    "wet 8,5 m WC"
+   ],
+   [
+    "Maximum size pumpable solids",
+    "13 mm"
+   ],
+   [
+    "Materials liquid parts",
+    "Polypropylene (91 kg)"
+   ],
+   [
+    "Available materials valve seats",
+    "Aluminium, Geolast, Polypropylene, Santoprene, Stainless Steel, Acetal, Hytrel, Buna-N, Viton"
+   ],
+   [
+    "Available materials valve balls",
+    "Geolast, Neoprene, Neoprene weighted, Santoprene, Acetal, Hytrel, PTFE, Buna-N, Viton"
+   ],
+   [
+    "Available materials diaphragms",
+    "Neoprene, Neoprene overmold, Buna-N, Viton, Geolast, Hytrel, Santoprene, PTFE/Santoprene 2 pieces"
+   ],
+   [
+    "Material center section",
+    "Aluminium or Polypropylene"
    ]
   ]
  }

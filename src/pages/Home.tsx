@@ -39,7 +39,7 @@ const CATEGORIES: {
     title: "Process Pumps",
     desc: "Diaphragm, peristaltic, and specialty process pumps for demanding fluids.",
     brands: [
-      { name: "Verderflex", img: "/img/products/Verderflex-Hose-Pump.jpg", alt: "Verderflex peristaltic hose pump", to: "/products#verderflex" },
+      { name: "Verderair", img: "/img/products/Verderair-VA-25-HP.jpg", alt: "Verderair VA-25 air-operated diaphragm pump", to: "/products#verderair" },
       { name: "Nikkiso", img: "/img/products/Nikkiso-CHEMIPON-B-Series-BX.jpg", alt: "Nikkiso CHEMIPON B diaphragm metering pump", to: "/products#nikkiso" },
       { name: "Dino", img: "/img/products/Machinery-HD-A1.png", alt: "Dino HD-A1 drum pump", to: "/products#dino" },
       { name: "Longer", img: "/img/products/lipp001.jpg", alt: "Longer intelligent peristaltic pump", to: "/products#longer" },
@@ -104,7 +104,7 @@ const BRANDS: { label: string; to: string }[] = [
   { label: "TONSON", to: "/products#tonson" },
   { label: "DINO", to: "/products#dino" },
   { label: "LONGER", to: "/products#longer" },
-  { label: "VERDERFLEX", to: "/products#verderflex" },
+  { label: "VERDERAIR", to: "/products#verderair" },
   { label: "NEW AGE", to: "/products#tubings" },
   { label: "SAINT-GOBAIN", to: "/products#tubings" },
 ];

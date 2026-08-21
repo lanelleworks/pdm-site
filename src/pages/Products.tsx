@@ -32,10 +32,11 @@ const BRAND_ORDER: { brand: string; label: string; id: string; badge?: string; i
     groupOrder: ["roots blowers", "process pumps"],
   },
   {
-    brand: "Verderflex",
-    label: "VERDERFLEX",
-    id: "verderflex",
-    intro: "Peristaltic hose and tube pumps for abrasive or shear-sensitive media.",
+    brand: "Verderair",
+    label: "VERDERAIR",
+    id: "verderair",
+    intro: "Air-operated double diaphragm pumps for chemically aggressive, viscous, or abrasive fluids — VA metallic and non-metallic, PURE, HP high-pressure, split manifolds, and drum pumps.",
+    groupOrder: ["drum pumps", "high-pressure", "PURE PTFE series", "split manifolds", "VA series"],
   },
   {
     brand: "Dino",
