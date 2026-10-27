@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
 import { CUSTOMERS } from "@/data/customers";
 import { CUSTOMER_LOGOS } from "@/data/customerLogos";
 import { BRAND_LOGOS } from "@/data/brands";
@@ -200,17 +200,31 @@ export default function Reference() {
                   {p.names.map((n) => {
                     const l = BRAND_LOGOS[PRINCIPAL_LOGO[n]];
                     return (
-                      <li key={n} className="flex items-center gap-3">
-                        <span className="flex h-10 w-[76px] shrink-0 items-center justify-center rounded-md border border-line bg-white px-2">
-                          <img
-                            src={asset(l.logo)}
-                            alt=""
-                            style={{ height: Math.round(l.h * 0.55) }}
-                            className="w-auto max-w-full object-contain"
-                            loading="lazy"
-                          />
-                        </span>
-                        <span className="text-sm font-medium text-neutral-700">{n}</span>
+                      <li key={n}>
+                        <a
+                          href={l.site}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit the official ${n} website (opens in a new tab)`}
+                          className="group -mx-2 flex items-center gap-3 rounded-lg px-2 py-1 transition-colors hover:bg-ground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                        >
+                          <span className="flex h-10 w-[76px] shrink-0 items-center justify-center rounded-md border border-line bg-white px-2">
+                            <img
+                              src={asset(l.logo)}
+                              alt=""
+                              style={{ height: Math.round(l.h * 0.55) }}
+                              className="w-auto max-w-full object-contain"
+                              loading="lazy"
+                            />
+                          </span>
+                          <span className="min-w-0">
+                            <span className="block text-sm font-medium leading-tight text-neutral-700 group-hover:text-black">{n}</span>
+                            <span className="mt-0.5 flex items-center gap-0.5 text-[11px] font-semibold text-neutral-400 transition-colors group-hover:text-neutral-900">
+                              Visit site
+                              <ArrowUpRight size={12} strokeWidth={2.4} className="transition-transform group-hover:-translate-y-px group-hover:translate-x-px" />
+                            </span>
+                          </span>
+                        </a>
                       </li>
                     );
                   })}

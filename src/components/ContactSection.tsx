@@ -1,6 +1,16 @@
 import { motion } from "motion/react";
-import { Phone, Mail, MapPin, Printer } from "lucide-react";
+import { Phone, Mail, MapPin, Printer, ArrowUpRight, Navigation } from "lucide-react";
 import { fadeUp } from "@/lib/motion";
+
+// PDM's own Google Maps listing ("Putra Deka Mandiri. CV - Metro Permata 1"). The cid is
+// the listing's id, so the link always opens this exact business, not a fuzzy search.
+const MAPS_LISTING = "https://maps.google.com/?cid=9085324989371105086";
+const MAPS_DIRECTIONS =
+  "https://www.google.com/maps/dir/?api=1&destination=Putra+Deka+Mandiri.+CV+-+Metro+Permata+1";
+// Keyless embed of the same place. It is a preview only: a link laid over it opens the
+// listing, so the map never traps scrolling on phones.
+const MAPS_EMBED =
+  "https://www.google.com/maps?q=Putra+Deka+Mandiri.+CV+-+Metro+Permata+1&ll=-6.202623,106.714694&z=16&output=embed";
 
 export default function ContactSection() {
   return (
@@ -41,7 +51,12 @@ export default function ContactSection() {
                 </span>
                 pdm@putradekamandiri.com
               </a>
-              <div className="flex items-start gap-3 font-medium text-neutral-700">
+              <a
+                href={MAPS_LISTING}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3 font-medium text-neutral-700 transition-colors hover:text-black"
+              >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-yellow/20">
                   <MapPin size={16} className="text-neutral-900" />
                 </span>
@@ -49,8 +64,12 @@ export default function ContactSection() {
                   Ruko Metro Permata I Blok A2/12
                   <br />
                   Karang Mulya – Ciledug, Tangerang 15157, Indonesia
+                  <span className="mt-1 flex items-center gap-1 text-xs font-semibold text-neutral-500 transition-colors group-hover:text-black">
+                    Open in Google Maps
+                    <ArrowUpRight size={13} strokeWidth={2.4} className="transition-transform group-hover:-translate-y-px group-hover:translate-x-px" />
+                  </span>
                 </span>
-              </div>
+              </a>
             </div>
           </motion.div>
 
@@ -90,6 +109,69 @@ export default function ContactSection() {
             </a>
           </motion.div>
         </div>
+
+        {/* Location: live map preview that opens the Google Maps listing */}
+        <motion.div
+          {...fadeUp}
+          className="mt-12 overflow-hidden rounded-2xl border border-line bg-white shadow-card-lg"
+        >
+          <div className="group relative h-[280px] bg-ground md:h-[360px]">
+            <iframe
+              src={MAPS_EMBED}
+              title="Map showing CV. Putra Deka Mandiri, Ruko Metro Permata I, Ciledug, Tangerang"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              tabIndex={-1}
+              className="pointer-events-none h-full w-full border-0 saturate-[0.85] transition-[filter] duration-300 group-hover:saturate-100"
+            />
+            <a
+              href={MAPS_LISTING}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open CV. Putra Deka Mandiri in Google Maps"
+              className="absolute inset-0 flex items-end p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-yellow md:p-5"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-xs font-bold text-neutral-900 shadow-card-lg ring-1 ring-black/5 backdrop-blur transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-ink group-hover:text-white">
+                <MapPin size={14} strokeWidth={2.4} />
+                Open in Google Maps
+                <ArrowUpRight size={14} strokeWidth={2.4} />
+              </span>
+            </a>
+          </div>
+          <div className="flex flex-col gap-5 border-t border-line p-5 md:flex-row md:items-center md:justify-between md:p-6">
+            <div className="flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-yellow">
+                <MapPin size={18} className="text-black" />
+              </span>
+              <div>
+                <p className="font-display text-base font-bold text-neutral-900">CV. Putra Deka Mandiri</p>
+                <p className="mt-0.5 text-sm leading-relaxed text-neutral-600">
+                  Ruko Metro Permata I Blok A2/12, Karang Mulya – Ciledug, Tangerang 15157
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2.5 sm:flex-row md:shrink-0">
+              <a
+                href={MAPS_DIRECTIONS}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-yellow px-5 py-3 text-sm font-bold text-black shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-lg"
+              >
+                <Navigation size={15} strokeWidth={2.5} />
+                Get directions
+              </a>
+              <a
+                href={MAPS_LISTING}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-300 bg-white px-5 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:border-neutral-500"
+              >
+                Open in Google Maps
+                <ArrowUpRight size={15} />
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
