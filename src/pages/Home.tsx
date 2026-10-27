@@ -183,14 +183,24 @@ export default function Home() {
               across Indonesia.
             </motion.h1>
 
-            <motion.p
+            <motion.div
               {...enter}
-              className="mt-5 max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg"
+              className="mt-5 max-w-xl space-y-4 text-base leading-relaxed text-neutral-600 md:text-lg"
             >
-              Since 2007, CV. Putra Deka Mandiri has equipped Indonesian industry
-              with vacuum pumps, process pumps, air motors, and industrial hoses —
-              with genuine parts and real after-sales service.
-            </motion.p>
+              <p>
+                CV. Putra Deka Mandiri is a growing company that markets and
+                distributes pumps, vacuum pumps, and other industrial automation
+                solutions. Established in 2007, Putra Deka Mandiri has been appointed
+                as an Authorized Distributor for certain high-quality products.
+              </p>
+              <p>
+                Beyond sales, we provide service, spare parts, and most importantly,
+                good after-sales service, because we believe our success as a company
+                relies on our dedication to providing exceptional service. We will give
+                you the best experience for your vacuum pump, pump, and blower needs
+                in Indonesia.
+              </p>
+            </motion.div>
 
             <motion.div
               {...enter}
