@@ -8,8 +8,11 @@ import { EASE_APPLE } from "@/lib/motion";
    - The brochure is a 2:1 banner with a steep diagonal. The hero column is ~1.1:1, so the
      same angle would crush the text; the diagonal is kept but flattened. All geometry lives
      in the --a / --b / --band / --p1 / --p2 custom properties, set per breakpoint below.
-   - refinery.jpg is the clean photo strip cropped from the brochure (x 0–330), so the
-     brochure's baked yellow band never shows. It only ever renders at or below 538px tall.
+   - mission-refinery.jpg (1116x2000, 9:16, AI-generated for this slot) replaces the old
+     brochure crop, which sliced the tower. The tower sits ~35% across, so the photo is
+     anchored at 30% horizontally: the tower stays inside the slanted wedge at every
+     breakpoint, and the wedge is narrower than 9:16, so it is fitted to the full height
+     and the top of the tower is never cut. 2000px tall covers 3x phones.
    - Labels use Archivo at a condensed width to echo the brochure's condensed caps.
 */
 
@@ -30,7 +33,7 @@ const BLOCKS = [
 
 export default function HeroMissionPanel() {
   const reducedMotion = useReducedMotion();
-  const photo = asset("/img/company/refinery.jpg");
+  const photo = asset("/img/company/mission-refinery.jpg");
 
   return (
     <motion.figure
@@ -55,7 +58,7 @@ export default function HeroMissionPanel() {
           <img
             src={photo}
             alt=""
-            className="absolute inset-y-0 left-0 h-full w-[var(--b)] object-cover object-right"
+            className="absolute inset-y-0 left-0 h-full w-[var(--b)] object-cover object-[30%_50%]"
             draggable={false}
           />
         </div>
