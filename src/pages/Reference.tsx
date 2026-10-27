@@ -3,8 +3,60 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import { CUSTOMERS } from "@/data/customers";
+import { CUSTOMER_LOGOS } from "@/data/customerLogos";
+import { BRAND_LOGOS } from "@/data/brands";
 import { fadeUp } from "@/lib/motion";
 import { asset, cn } from "@/lib/utils";
+
+// Principal name -> key in BRAND_LOGOS (shared with the Products page)
+const PRINCIPAL_LOGO: Record<string, keyof typeof BRAND_LOGOS> = {
+  Busch: "busch",
+  Trundean: "trundean",
+  Verderair: "verderair",
+  Nikkiso: "nikkiso",
+  Dino: "dino",
+  Longer: "longer",
+  Tonson: "tonson",
+  "New Age Industries": "newage",
+  "Saint-Gobain": "saint-gobain",
+};
+
+// Two-letter badge for the few customers with no public logo: skip the legal prefix
+// and filler words, take the first letters of the next two words.
+const initials = (name: string) =>
+  name
+    .replace(/^(PT|PP)\.?\s+/i, "")
+    .split(/\s+/)
+    .filter((w) => !/^(the|dan|and|&)$/i.test(w))
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase();
+
+function CustomerLogo({ name }: { name: string }) {
+  const logo = CUSTOMER_LOGOS[name];
+  return (
+    <div className="flex h-14 w-[104px] shrink-0 items-center justify-center rounded-lg border border-line bg-white px-2.5">
+      {logo ? (
+        <img
+          src={asset(logo)}
+          alt={`${name} logo`}
+          className="max-h-9 max-w-full object-contain"
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
+      ) : (
+        <span
+          aria-hidden="true"
+          className="flex h-9 w-9 items-center justify-center rounded-md bg-ground font-display text-xs font-bold tracking-wide text-neutral-500"
+        >
+          {initials(name)}
+        </span>
+      )}
+    </div>
+  );
+}
 
 const PRINCIPALS = [
   { group: "Vacuum Pumps", names: ["Busch", "Trundean"] },
@@ -111,12 +163,13 @@ export default function Reference() {
           {filtered.map((c) => (
             <div
               key={c.name}
-              className="flex items-center justify-between gap-3 rounded-xl border border-line bg-white px-4 py-3 shadow-card"
+              className="flex items-center gap-3.5 rounded-xl border border-line bg-white p-2.5 pr-4 shadow-card"
             >
-              <span className="text-sm font-medium text-neutral-800">{c.name}</span>
-              <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-neutral-400">
-                {c.sector}
-              </span>
+              <CustomerLogo name={c.name} />
+              <div className="min-w-0">
+                <p className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">{c.name}</p>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-400">{c.sector}</p>
+              </div>
             </div>
           ))}
           {filtered.length === 0 && (
@@ -134,22 +187,33 @@ export default function Reference() {
             Our principals.
           </motion.h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {PRINCIPALS.map((p, i) => (
+            {PRINCIPALS.map((p) => (
               <motion.div
                 key={p.group}
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: i * 0.06 }}
                 className="rounded-2xl border border-line bg-white p-6 shadow-card"
               >
                 <h3 className="border-b-2 border-brand-yellow pb-2 text-xs font-bold uppercase tracking-[0.18em] text-neutral-900">
                   {p.group}
                 </h3>
-                <ul className="mt-3 space-y-1.5">
-                  {p.names.map((n) => (
-                    <li key={n} className="text-sm font-medium text-neutral-700">
-                      {n}
-                    </li>
-                  ))}
+                <ul className="mt-4 space-y-3">
+                  {p.names.map((n) => {
+                    const l = BRAND_LOGOS[PRINCIPAL_LOGO[n]];
+                    return (
+                      <li key={n} className="flex items-center gap-3">
+                        <span className="flex h-10 w-[76px] shrink-0 items-center justify-center rounded-md border border-line bg-white px-2">
+                          <img
+                            src={asset(l.logo)}
+                            alt=""
+                            style={{ height: Math.round(l.h * 0.55) }}
+                            className="w-auto max-w-full object-contain"
+                            loading="lazy"
+                          />
+                        </span>
+                        <span className="text-sm font-medium text-neutral-700">{n}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </motion.div>
             ))}

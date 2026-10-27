@@ -42,11 +42,10 @@ export default function Applications() {
 
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {SECTORS.map((s, i) => (
+          {SECTORS.map((s) => (
             <motion.article
               key={s.title}
               {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: (i % 3) * 0.06 }}
               className="group overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-card-lg"
             >
               <div className="relative h-44 overflow-hidden">

@@ -1,12 +1,15 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BadgeCheck, Cable } from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
+import { BRAND_LOGOS, PRODUCT_LINES, type LineBrand } from "@/data/brands";
 import ProductCard from "@/components/ProductCard";
 import { fadeUp } from "@/lib/motion";
 import { asset } from "@/lib/utils";
 
-/* Complete catalogue — every card links to its product page. */
+/* Complete catalogue — a product-line directory of brand logos (after the original
+   putradekamandiri.com/products), then every brand's range. Every card links to its
+   product page. */
 
 // `label` is uppercase for display; `brand` matches the products.ts data field.
 const BRAND_ORDER: { brand: string; label: string; id: string; badge?: string; intro: string; groupOrder?: string[] }[] = [
@@ -64,6 +67,78 @@ const BRAND_ORDER: { brand: string; label: string; id: string; badge?: string; i
 ];
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const slug = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
+
+const countFor = (b: LineBrand) =>
+  b.brand ? PRODUCTS.filter((p) => p.brand === b.brand && (!b.group || p.group === b.group)).length : 0;
+
+/* White plate holding a logo at its optical size; `scale` shrinks it for tighter spots. */
+function LogoPlate({ id, scale = 1, className = "" }: { id: keyof typeof BRAND_LOGOS; scale?: number; className?: string }) {
+  const l = BRAND_LOGOS[id];
+  return (
+    <div
+      className={
+        "flex shrink-0 items-center justify-center rounded-xl border border-line bg-white px-4 shadow-card " + className
+      }
+    >
+      <img
+        src={asset(l.logo)}
+        alt={`${l.name} logo`}
+        style={{ height: Math.round(l.h * scale) }}
+        className="w-auto max-w-full object-contain"
+        loading="lazy"
+        decoding="async"
+        draggable={false}
+      />
+    </div>
+  );
+}
+
+function BrandTile({ b }: { b: LineBrand }) {
+  const l = BRAND_LOGOS[b.key];
+  const n = countFor(b);
+  const meta = b.note ?? (b.group ? `${n} ${b.group}` : `${n} products`);
+  return (
+    <a
+      href={b.href}
+      className="group relative flex h-[148px] flex-col overflow-hidden rounded-xl border border-line bg-white px-4 pb-3.5 pt-4 shadow-card outline-none transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-card-lg focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2"
+    >
+      {b.authorized && (
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-busch">
+          <BadgeCheck size={12} strokeWidth={2.4} />
+          Authorized
+        </span>
+      )}
+      <div className="flex flex-1 items-center justify-center">
+        <img
+          src={asset(l.logo)}
+          alt=""
+          style={{ height: l.h }}
+          className="w-auto max-w-full object-contain transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
+      </div>
+      <div className="flex items-end justify-between gap-2">
+        <div className="min-w-0">
+          <p className="truncate text-[11px] font-bold uppercase tracking-[0.08em] text-neutral-800">{l.name}</p>
+          <p className="mt-0.5 truncate text-[11px] tabular-nums text-neutral-500">{meta}</p>
+        </div>
+        <ArrowRight
+          size={14}
+          strokeWidth={2.4}
+          className="mb-0.5 shrink-0 -translate-x-1 text-neutral-400 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-neutral-900 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
+        />
+      </div>
+      {/* PDM-yellow rule that draws in on hover */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-brand-yellow transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"
+      />
+    </a>
+  );
+}
 
 export default function Products() {
   return (
@@ -80,19 +155,47 @@ export default function Products() {
               any product for details, specifications, and a quote.
             </p>
           </motion.div>
-          <motion.nav {...fadeUp} aria-label="Jump to brand" className="mt-8 flex flex-wrap gap-2">
-            {[...BRAND_ORDER.map((b) => ({ id: b.id, label: b.label })),
-              { id: "tonson", label: "Tonson" },
-              { id: "tubings", label: "Tubings & Hoses" }].map((j) => (
-              <a
-                key={j.id}
-                href={`#${j.id}`}
-                className="rounded-full border border-neutral-300 bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-700 transition-colors hover:border-brand-yellow hover:bg-brand-yellow/10"
-              >
-                {j.label}
-              </a>
-            ))}
-          </motion.nav>
+        </div>
+      </section>
+
+      {/* ————— Product-line directory ————— */}
+      <section id="lines" aria-labelledby="product-lines" className="scroll-mt-20 border-b border-line bg-paper">
+        <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+          <motion.div {...fadeUp} className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2">
+            <h2 id="product-lines" className="font-display text-2xl font-bold tracking-tight text-neutral-900 md:text-3xl">
+              Browse by product line
+            </h2>
+            <p className="text-sm text-neutral-500">Pick a brand to jump straight to its range.</p>
+          </motion.div>
+
+          <div className="mt-8 divide-y divide-line border-y border-line">
+            {PRODUCT_LINES.map((line) => {
+              const total = line.brands.reduce((s, b) => s + countFor(b), 0);
+              return (
+                <motion.div
+                  key={line.title}
+                  {...fadeUp}
+                  className="grid gap-5 py-7 lg:grid-cols-[250px,1fr] lg:gap-10 lg:py-9"
+                >
+                  <div>
+                    <h3 className="font-display text-xl font-bold tracking-tight text-neutral-900">{line.title}</h3>
+                    <p className="mt-1.5 max-w-sm text-sm leading-relaxed text-neutral-600">{line.desc}</p>
+                    <p className="mt-3 text-xs font-semibold tabular-nums text-neutral-400">
+                      {line.brands.length} {line.brands.length === 1 ? "brand" : "brands"}
+                      {total > 0 && <> · {total} products</>}
+                    </p>
+                  </div>
+                  <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    {line.brands.map((b) => (
+                      <li key={b.href}>
+                        <BrandTile b={b} />
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -107,30 +210,32 @@ export default function Products() {
               : [{ g: "", items }];
             return (
               <section key={meta.id} id={meta.id} aria-label={meta.label} className="scroll-mt-32">
-                <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
-                  <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">
-                    {meta.label}
-                  </h2>
-                  {meta.badge && (
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-busch/50 bg-busch/[0.07] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-busch">
-                      <BadgeCheck size={13} />
-                      {meta.badge}
-                    </span>
-                  )}
-                  <span className="rounded-full bg-ground px-2.5 py-1 text-[11px] font-bold text-neutral-500">
-                    {items.length} products
-                  </span>
+                <motion.div {...fadeUp} className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
+                  <LogoPlate id={meta.id as keyof typeof BRAND_LOGOS} scale={0.9} className="h-[84px] w-[176px]" />
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">{meta.label}</h2>
+                      {meta.badge && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-busch/50 bg-busch/[0.07] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-busch">
+                          <BadgeCheck size={13} />
+                          {meta.badge}
+                        </span>
+                      )}
+                      <span className="rounded-full bg-ground px-2.5 py-1 text-[11px] font-bold tabular-nums text-neutral-500">
+                        {items.length} products
+                      </span>
+                    </div>
+                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">{meta.intro}</p>
+                  </div>
                 </motion.div>
-                <motion.p {...fadeUp} className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
-                  {meta.intro}
-                </motion.p>
 
                 {groups.map(({ g, items: gi }) => (
                   <div key={g || "all"}>
                     {g && (
                       <motion.h3
                         {...fadeUp}
-                        className="mt-8 border-l-[3px] border-brand-yellow pl-3 font-display text-sm font-bold uppercase tracking-wide text-neutral-700"
+                        id={`${meta.id}-${slug(g)}`}
+                        className="mt-8 scroll-mt-32 border-l-[3px] border-brand-yellow pl-3 font-display text-sm font-bold uppercase tracking-wide text-neutral-700"
                       >
                         {cap(g)}
                         <span className="ml-2 font-sans text-xs font-semibold text-neutral-400">
@@ -139,11 +244,10 @@ export default function Products() {
                       </motion.h3>
                     )}
                     <div className={(g ? "mt-4" : "mt-8") + " grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"}>
-                      {gi.map((p, i) => (
+                      {gi.map((p) => (
                         <motion.div
                           key={p.slug}
                           {...fadeUp}
-                          transition={{ ...fadeUp.transition, delay: (i % 4) * 0.04 }}
                         >
                           <ProductCard product={p} compact={items.length > 10} />
                         </motion.div>
@@ -157,15 +261,20 @@ export default function Products() {
 
           {/* Tonson — catalogue listing (no per-product pages on source site) */}
           <section id="tonson" aria-label="Tonson" className="scroll-mt-32">
-            <motion.div {...fadeUp} className="flex flex-wrap items-center gap-3">
-              <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">TONSON</h2>
-              <span className="rounded-full bg-ground px-2.5 py-1 text-[11px] font-bold text-neutral-500">
-                Air Motors
-              </span>
+            <motion.div {...fadeUp} className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
+              <LogoPlate id="tonson" scale={0.9} className="h-[84px] w-[176px]" />
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h2 className="font-display text-2xl font-bold text-neutral-900 md:text-3xl">TONSON</h2>
+                  <span className="rounded-full bg-ground px-2.5 py-1 text-[11px] font-bold text-neutral-500">
+                    Air Motors
+                  </span>
+                </div>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
+                  Vane air motors for explosion-proof, washdown, and stall-tolerant duty.
+                </p>
+              </div>
             </motion.div>
-            <motion.p {...fadeUp} className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
-              Vane air motors for explosion-proof, washdown, and stall-tolerant duty.
-            </motion.p>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {[
                 { img: "/img/products/Tonson-Angle-bung-air-mixer1.png", name: "Air motors & bung mixers" },
@@ -200,13 +309,20 @@ export default function Products() {
             </motion.p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
-                { name: "NEW AGE INDUSTRIES", desc: "Plastic & rubber tubing, reinforced hose, and fittings — FDA, USP, and 3-A sanitary options." },
-                { name: "SAINT-GOBAIN", desc: "Tygon®, Norprene®, and PharMed® high-performance tubing for food, beverage, and biopharma." },
+                { id: "newage" as const, name: "NEW AGE INDUSTRIES", desc: "Plastic & rubber tubing, reinforced hose, and fittings — FDA, USP, and 3-A sanitary options." },
+                { id: "saint-gobain" as const, name: "SAINT-GOBAIN", desc: "Tygon®, Norprene®, and PharMed® high-performance tubing for food, beverage, and biopharma." },
               ].map((t) => (
-                <motion.div key={t.name} {...fadeUp} className="rounded-2xl border border-line bg-white p-6 shadow-card">
-                  <Cable size={22} strokeWidth={1.6} className="text-neutral-400" />
-                  <h3 className="mt-3 font-display text-base font-bold text-neutral-900">{t.name}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{t.desc}</p>
+                <motion.div
+                  key={t.name}
+                  id={t.id}
+                  {...fadeUp}
+                  className="flex scroll-mt-32 flex-col gap-5 rounded-2xl border border-line bg-white p-6 shadow-card sm:flex-row sm:items-center"
+                >
+                  <LogoPlate id={t.id} scale={0.85} className="h-[76px] w-[160px] shadow-none" />
+                  <div>
+                    <h3 className="font-display text-base font-bold text-neutral-900">{t.name}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{t.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>

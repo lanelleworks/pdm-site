@@ -60,11 +60,10 @@ export default function Articles() {
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {STEPS.map((s, i) => (
+            {STEPS.map((s) => (
               <motion.div
                 key={s.title}
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: i * 0.07 }}
                 className="rounded-2xl border border-line bg-white p-6 shadow-card"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow/20 text-neutral-900">

@@ -2,14 +2,19 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import {
   BadgeCheck,
-  Wrench,
-  Clock,
-  Package,
   ArrowRight,
+  Zap,
+  ShieldCheck,
+  Gem,
+  HardHat,
+  Target,
+  Handshake,
 } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
-import HeroProductShowcase from "@/components/HeroProductShowcase";
-import { fadeUp } from "@/lib/motion";
+import HeroMissionPanel from "@/components/HeroMissionPanel";
+import WhyFlipCard, { type WhyItem } from "@/components/WhyFlipCard";
+import { PRODUCTS } from "@/data/products";
+import { enter, fadeUp } from "@/lib/motion";
 import { asset } from "@/lib/utils";
 import CategoryCard from "@/components/CategoryCard";
 
@@ -72,26 +77,67 @@ const APP_TEASER = [
   { img: "/img/apps/Printing.png", label: "Printing Industries" },
 ];
 
-const WHY = [
+// The six values from the original putradekamandiri.com home page. Front = headline,
+// back = the original description (lightly corrected) plus details already stated
+// elsewhere on this site. No new claims.
+const WHY: WhyItem[] = [
   {
-    icon: BadgeCheck,
-    title: "Authorized Distributor",
-    desc: "Official distributor of Busch Vacuum Solutions and other world-class brands — genuine units, genuine parts, full warranty.",
+    icon: Zap,
+    title: "Powerful Products",
+    tagline: "Matched to your specification.",
+    body: "We make sure you get powerful products that meet your needs and specifications, and we partner with you to find high-quality vacuum pumps, blowers, compressors, and other industrial parts.",
+    details: [
+      "Authorized Busch distributor",
+      "Nine world-class principals",
+      "Sized to your flow, vacuum level, and media",
+    ],
   },
   {
-    icon: Clock,
-    title: "Since 2007",
-    desc: "Nearly two decades supplying pumps and vacuum technology to industries across Indonesia.",
+    icon: ShieldCheck,
+    title: "Durable Products",
+    tagline: "Equipment that keeps running.",
+    body: "With the high durability of the products we offer, our customers can feel comfortable and secure about their industrial equipment. Our brands are recognized among the best in the industry.",
+    details: ["Genuine units with full warranty", "Genuine spare parts kept in stock", "Busch, Verderair, Nikkiso, Longer, and more"],
   },
   {
-    icon: Wrench,
-    title: "After-Sales Service",
-    desc: "Commissioning, maintenance, and repair handled by our own technical team — not just a reseller.",
+    icon: Gem,
+    title: "Magnificent Products",
+    tagline: "Precision for every industry.",
+    body: "Products with the quality, precision, and power to meet all your needs, applied across chemical, pharmaceutical, food and beverage, and many other industries.",
+    details: [
+      `${PRODUCTS.length} products in the catalogue`,
+      "12 industries served",
+      "Full specifications on every product page",
+    ],
   },
   {
-    icon: Package,
-    title: "Spare Parts Ready",
-    desc: "Genuine spare parts and consumables in stock, so your downtime stays short.",
+    icon: HardHat,
+    title: "Professional Services",
+    tagline: "Done properly, on every project.",
+    body: "We bring a professional attitude to every project we take on. We aim to give our customers the best experience, and we build our reputation on integrity and trust.",
+    details: [
+      "On-site commissioning and repair",
+      "Maintenance by our own technical team",
+      "A service partner, not just a reseller",
+    ],
+  },
+  {
+    icon: Target,
+    title: "Dedicated & Committed",
+    tagline: "Your first call for vacuum.",
+    body: "We do our utmost to serve every customer with dedication and commitment. Trust us as your number one solution for vacuum pumps, pumps, blowers, and other industrial equipment.",
+    details: ["Serving Indonesian industry since 2007", "94+ customer references", "Support that stays after the delivery"],
+  },
+  {
+    icon: Handshake,
+    title: "Mutual Satisfaction",
+    tagline: "A partner, not just a vendor.",
+    body: "We grow together with our customers, not just as a vendor but as a partner who understands your problems and finds the best solutions for them.",
+    details: [
+      "Custom-made solutions for your process",
+      "A long-term partnership of growth",
+      "Real value for money",
+    ],
   },
 ];
 
@@ -117,9 +163,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:px-6 md:py-20 lg:grid-cols-[1.05fr,0.95fr] lg:gap-14">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              {...enter}
               className="inline-flex items-center gap-2 rounded-full border border-busch/50 bg-busch/[0.07] px-4 py-1.5"
             >
               <BadgeCheck size={15} className="shrink-0 text-busch" />
@@ -129,9 +173,7 @@ export default function Home() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.22 }}
+              {...enter}
               className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-5xl xl:text-[3.4rem]"
             >
               Pumps &amp; vacuum technology,{" "}
@@ -142,9 +184,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.34 }}
+              {...enter}
               className="mt-5 max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg"
             >
               Since 2007, CV. Putra Deka Mandiri has equipped Indonesian industry
@@ -153,9 +193,7 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.46 }}
+              {...enter}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <Link
@@ -174,8 +212,8 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Product visual — auto-rotating showcase of real distributed units */}
-          <HeroProductShowcase />
+          {/* Mission & Value — rebuilt from the company brochure panel */}
+          <HeroMissionPanel />
         </div>
       </section>
 
@@ -213,43 +251,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ————— Product lines — real product photos ————— */}
-      <section id="products" className="scroll-mt-20 bg-ground">
+      {/* ————— Why PDM — six values, flip for the details ————— */}
+      <section id="why" className="scroll-mt-20 bg-ground">
         <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-24">
-          <motion.div {...fadeUp} className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-neutral-500">
-              What we supply
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
-              Four product lines. One supplier.
-            </h2>
-            <p className="mt-4 leading-relaxed text-neutral-600">
-              Every unit sourced as an authorized distributor — with datasheets,
-              sizing help, and spare parts to match.
+          <motion.div {...fadeUp} className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+            <div className="max-w-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-neutral-500">
+                Why PDM
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+                A distributor that stays after the delivery.
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-neutral-500">
+              Six commitments behind every unit we supply. Hover or tap a card for the details.
             </p>
           </motion.div>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {CATEGORIES.map((c, i) => (
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {WHY.map((w, i) => (
               <motion.div
-                key={c.title}
+                key={w.title}
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: i * 0.07 }}
               >
-                <CategoryCard title={c.title} desc={c.desc} brands={c.brands} />
+                <WhyFlipCard item={w} tone={i % 2 === 0 ? "dark" : "yellow"} />
               </motion.div>
             ))}
           </div>
-
-          <motion.div {...fadeUp} className="mt-9">
-            <Link
-              to="/products"
-              className="inline-flex items-center gap-2 text-sm font-bold text-neutral-900 underline decoration-brand-yellow decoration-[3px] underline-offset-4 transition-colors hover:decoration-black"
-            >
-              See the full product range
-              <ArrowRight size={15} strokeWidth={2.5} />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
@@ -275,11 +302,10 @@ export default function Home() {
           </motion.div>
 
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-3">
-            {APP_TEASER.map((a, i) => (
+            {APP_TEASER.map((a) => (
               <motion.div
                 key={a.label}
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: (i % 3) * 0.07 }}
                 className="group relative h-44 overflow-hidden rounded-2xl md:h-52"
               >
                 <img
@@ -297,67 +323,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ————— Why PDM + real team photo ————— */}
-      <section id="why" className="scroll-mt-20 bg-ground">
+      {/* ————— Product lines — real product photos ————— */}
+      <section id="products" className="scroll-mt-20 bg-ground">
         <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-24">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr,400px]">
-            <div>
-              <motion.div {...fadeUp} className="max-w-2xl">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-neutral-500">
-                  Why PDM
-                </p>
-                <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
-                  A distributor that stays after the delivery.
-                </h2>
+          <motion.div {...fadeUp} className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-neutral-500">
+              What we supply
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+              Four product lines. One supplier.
+            </h2>
+            <p className="mt-4 leading-relaxed text-neutral-600">
+              Every unit sourced as an authorized distributor — with datasheets,
+              sizing help, and spare parts to match.
+            </p>
+          </motion.div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {CATEGORIES.map((c) => (
+              <motion.div
+                key={c.title}
+                {...fadeUp}
+              >
+                <CategoryCard title={c.title} desc={c.desc} brands={c.brands} />
               </motion.div>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                {WHY.map((w, i) => (
-                  <motion.div
-                    key={w.title}
-                    {...fadeUp}
-                    transition={{ ...fadeUp.transition, delay: i * 0.07 }}
-                    className="rounded-2xl border border-line bg-white p-6 shadow-card"
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow/20 text-neutral-900">
-                      <w.icon size={19} strokeWidth={2} />
-                    </div>
-                    <h3 className="mt-4 font-display text-base font-bold text-neutral-900">{w.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">{w.desc}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            {/* Service panel — product-as-hero, hairline dividers, no shadow */}
-            <motion.aside
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.2 }}
-              aria-label="Service commitment"
-              className="rounded-2xl border border-line bg-ground p-8"
-            >
-              <div className="flex h-56 items-center justify-center lg:h-64">
-                <img
-                  src={asset("/img/products/Busch-Combi-Vacuum-Pumps.png")}
-                  alt="Busch COMBI vacuum system — commissioned on-site by PDM"
-                  className="max-h-full w-auto object-contain"
-                />
-              </div>
-              <p className="mt-4 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
-                COMBI system — commissioned on-site by PDM
-              </p>
-              <div className="mt-6 divide-y divide-line border-t border-line">
-                {[
-                  "On-site commissioning & repair",
-                  "Genuine spare parts, in stock",
-                  "Response within one business day",
-                ].map((line) => (
-                  <div key={line} className="flex items-center gap-3 py-3.5">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-yellow ring-4 ring-brand-yellow/20" />
-                    <span className="text-sm font-medium text-neutral-700">{line}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.aside>
+            ))}
           </div>
+
+          <motion.div {...fadeUp} className="mt-9">
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 text-sm font-bold text-neutral-900 underline decoration-brand-yellow decoration-[3px] underline-offset-4 transition-colors hover:decoration-black"
+            >
+              See the full product range
+              <ArrowRight size={15} strokeWidth={2.5} />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -378,7 +379,7 @@ export default function Home() {
           </motion.div>
           <motion.div
             {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.15 }}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
             className="mx-auto mt-10 max-w-5xl rounded-2xl border border-line bg-white p-6 shadow-card md:p-10"
           >
             <img

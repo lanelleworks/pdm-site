@@ -56,7 +56,7 @@ export default function ContactSection() {
 
           <motion.div
             {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.15 }}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
             className="rounded-2xl border border-line bg-white p-8 shadow-card-lg"
           >
             <h3 className="font-display text-xl font-bold text-neutral-900">Request a quotation</h3>

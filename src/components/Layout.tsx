@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { NavLink, Outlet, Link, useLocation } from "react-router-dom";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 import { asset, cn } from "@/lib/utils";
@@ -12,15 +12,24 @@ const NAV = [
   { label: "Contact Us", to: "/contact" },
 ];
 
+// New page: land instantly (at the top, or at the #anchor) like a native page load.
+// `html { scroll-behavior: smooth }` would otherwise glide the new page from the old
+// scroll position, firing every scroll reveal on the way. Same-page #anchor clicks
+// are left to the browser, which glides to them.
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
-  useEffect(() => {
-    if (hash) {
-      requestAnimationFrame(() => document.querySelector(hash)?.scrollIntoView());
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname, hash]);
+  // read through a ref: the effect runs on page changes only, hash-only changes are
+  // in-page clicks the browser already handles
+  const hashRef = useRef(hash);
+  hashRef.current = hash;
+  // layout effect: runs after the new page is in the DOM but before it paints, so the
+  // new page never flashes at the old scroll position
+  useLayoutEffect(() => {
+    const h = hashRef.current;
+    const target = h ? document.querySelector(h) : null;
+    if (target) target.scrollIntoView({ behavior: "instant", block: "start" });
+    else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
   return null;
 }
 
